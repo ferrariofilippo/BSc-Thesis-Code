@@ -1,6 +1,6 @@
-input_dim: 25
-hidden_1_dim: 24
-hidden_2_dim: 12
+input_dim: 16
+hidden_1_dim: 16
+hidden_2_dim: 8
 latent_dim: 3
 
 # relu | leaky_relu | gelu | tanh

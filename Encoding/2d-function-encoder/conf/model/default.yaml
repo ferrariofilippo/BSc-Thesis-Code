@@ -1,4 +1,4 @@
-input_dim: 441
+input_dim: 256
 hidden_1_dim: 128
 hidden_2_dim: 32
 latent_dim: 9
