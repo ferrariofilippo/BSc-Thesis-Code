@@ -1,0 +1,8 @@
+epochs: 400
+lr: 0.0005
+weight_decay: 0.0001
+
+optimizer: adamw
+
+early_stopping_patience: 50
+log_every: 100

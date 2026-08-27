@@ -1,0 +1,15 @@
+input_dim: 441
+hidden_1_dim: 128
+hidden_2_dim: 32
+latent_dim: 9
+
+# relu | leaky_relu | gelu | tanh
+hidden_activation: relu
+
+# Bounded to [-1, 1] as requested
+latent_activation: tanh
+
+# none | sigmoid | tanh
+# Use "none" (linear) if data is standardized (recommended default).
+# Use "sigmoid" only if your raw inputs are scaled to [0, 1] and standardize=false.
+output_activation: none

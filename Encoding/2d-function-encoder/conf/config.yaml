@@ -1,0 +1,18 @@
+defaults:
+  - data: default
+  - model: default
+  - training: default
+  - _self_
+
+seed: 42
+
+gpu_ids: [0]
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+  sweep:
+    dir: multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}_${hydra.job.override_dirname}
+    

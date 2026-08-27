@@ -3,3 +3,4 @@
 info.md
 .claude/
 *.ps1
+**/__pycache__/*

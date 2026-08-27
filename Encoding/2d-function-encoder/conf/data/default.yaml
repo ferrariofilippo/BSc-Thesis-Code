@@ -1,0 +1,7 @@
+# Path to your dataset. Must have exactly 101 numeric columns/features per row.
+path: ~/Università/Tesi/Codice_Tesi/ML/2d-function-encoder/data/2d_function_dataset.csv
+stats_path: data/standardization.npz
+
+val_split: 0.2
+batch_size: 256
+num_workers: 0
