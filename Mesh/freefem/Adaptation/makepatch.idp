@@ -1,0 +1,51 @@
+//verbosity=0;
+
+func real makepatch(
+  int[int,int] & patch,
+  int[int] & nextK,
+  mesh & Th
+) {
+    real ne = Th.nt;
+    real nv = Th.nv;
+    
+    real[int,int] nod2ele(nv, 1000); // stimo che ogni nodo veda al max 1000 elementi
+    int[int] next(nv);               // puntatore alla prima posizione libera di nod2ele
+    next = 0;
+    
+    int[int] alreadyin(ne);
+    alreadyin = 0; 
+    int nod, ele;
+
+    // costruzione di nod2ele
+    for (int k = 0; k < ne; k++)
+        for (int j = 0; j < 3; j++)
+        {
+            nod2ele(Th[k][j], next(Th[k][j])) = k; 
+            next(Th[k][j]) = next(Th[k][j]) + 1;
+        }
+
+    
+    for (int k = 0; k < ne; k++)
+    {
+        patch(k,0) = k;
+        alreadyin(k) = 1;
+        for (int i = 0; i < 3; i++)
+        {
+            nod = Th[k][i];
+            for (int j = 0; j < next(nod); j++)
+            {
+                ele = nod2ele(nod, j);
+                if (alreadyin(ele) == 0) 
+                {
+                    patch(k, nextK(k)) = ele;
+                    alreadyin(ele) = 1;
+                    nextK(k) = nextK(k) + 1;
+                }
+            } 
+        } 
+        alreadyin = 0;
+    }
+
+    return 1;
+}
+

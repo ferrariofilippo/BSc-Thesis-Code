@@ -1,0 +1,233 @@
+//verbosity=0;
+func real[int,int] makemetrica(
+	real toll,
+	real[int] & vv,
+	real hmax,
+	real hmin,
+	mesh & Th,
+	real omega,
+	real[string] & evaluationParams
+) {
+	include "makepatch.idp";
+	load "lapack"
+	
+	fespace Xh0(Th, P0);
+	fespace Xh1(Th, P1);
+
+	// Vol Patch???
+	real Khat = 3./4*sqrt(3.);
+	Xh0 vol=area; 
+	Xh0 eta2K = 0;
+	Xh0 eta2Kstar = 0;
+
+	Xh1 v;
+	v[] = vv;
+
+	Xh0 dxv,dyv;
+	dxv = dx(v);
+	dyv = dy(v);
+	Xh0 estimatex, estimatey;
+	
+	int ne = Th.nt;
+	int nv = Th.nv;
+	
+	real lam1star, lam2star;
+	real px, py;
+	real Ex, Ey;
+	real vpatch;
+	real a, sK, emax, emin, lm, sKstar, prodlam;
+	real eps = 2.220446049250313e-16;
+	real maxstretch = 1e3;
+	
+	int[int] nextK(ne);				// Per ogni k, nextK(k) contiene il numero di elementi del patch di k
+	real[int] lam1K(ne), lam2K(ne);	// Autovalori delle MK
+	real[int] Volpatchvertex(nv);	// Volume del patch dell' i-esimo nodo
+
+	int[int,int] patch(ne, 1000);	// Per ogni k(riga), le colonne sono i trinagoli del patch del tetraedro k
+	real[int,int] GK(2, 2),MK(2, 2);
+	real[int,int] r1K(2, ne), r2K(2, ne);	// x autovettori delle MK
+	real[int,int] r1Kstar(2, ne), r2Kstar(2, ne);
+	real[int,int] Mstar(2, 2), M(2, 2); 
+	real[int,int] metricaold(3, nv),metrica(3, nv);
+	
+    real[int,int] U(1, 1), V(1, 1);
+    real[int]     sigma(1);
+	nextK = 1;
+	makepatch(patch, nextK, Th);
+	
+	metrica=0;
+	metricaold=0;
+	Volpatchvertex=0;
+	
+	// OUTPUT
+	real[int, int] MReturn(Th.nv, 3);
+
+	// ------- Loop Sui Tetraedri ------- 
+	for (int k = 0; k < ne; k++) 
+	{
+		GK = 0;
+		MK = 0;
+		Mstar = 0;
+		px = 0;
+		py = 0;
+		vpatch = 0;
+
+		// ----- Ricostruzione Gradiente -----
+		// Calcolo del gradiente usando media pesata sull'area
+		// --- Loop sul Patch del k-esimo Tetraedro ---
+		for(int j = 0; j < nextK(k); j++) {
+			px += dxv[][patch(k,j)] * vol[][patch(k,j)];
+			py += dyv[][patch(k,j)] * vol[][patch(k,j)];
+			vpatch += vol[][patch(k,j)];   
+		}
+		// --- Fine Loop Patch ---
+		
+		px = px / vpatch;
+		py = py / vpatch;
+		
+		// ----- Fine Ricostruzione Gradiente -----
+
+		// ----- Stimatore Errore (seminorma H1) -----
+		// --- Loop sul Patch del k-esimo Tetraedro ---
+		for (int j = 0; j < nextK(k); j++) {
+			Ex = px - dxv[][patch(k, j)];
+			Ey = py - dyv[][patch(k, j)];	  
+			GK(0, 0) += Ex * Ex * vol[][patch(k, j)];
+			GK(0, 1) += Ex * Ey * vol[][patch(k, j)]; 
+			GK(1, 1) += Ey * Ey * vol[][patch(k, j)]; 
+		}
+		// --- Fine Loop Patch ---
+			
+		// Gk è simmetrica
+		GK(1,0) = GK(0,1);
+		GK = vpatch^(-1) * GK; 
+		
+		estimatex[][k] = px - dxv[][k];
+		estimatey[][k] = py - dyv[][k];
+
+		// ----- Fine Stimatore Errore (seminorma H1) -----
+
+		M= [
+			[(Th[k][1].x - Th[k][0].x) / sqrt(3.), (2 * Th[k][2].x - Th[k][0].x - Th[k][1].x) / 3],
+			[(Th[k][1].y - Th[k][0].y) / sqrt(3.), (2 * Th[k][2].y - Th[k][0].y - Th[k][1].y) / 3]
+		];
+
+		dgesdd(M, U, sigma, V);
+		lam1K(k) = sigma(0);
+		lam2K(k) = sigma(1);
+		r1K(0, k) = U(0, 0);
+		r1K(1, k) = U(1, 0);
+		r2K(0, k) = U(0, 1);
+		r2K(1, k) = U(1, 1);
+		
+		MK =  1. / lam1K(k)^2 * r1K(0:1, k) * r1K(0:1, k)';  
+		MK += 1. / lam2K(k)^2 * r2K(0:1, k) * r2K(0:1, k)';
+		sK = lam1K(k) / lam2K(k);
+		
+		// Fase di test:
+		// Calcolo degli etaK locali, 
+		real[int] GKr1 = GK * r1K(0:1, k);
+		real G1 = r1K(0:1, k)' * GKr1;
+		real[int] GKr2 = GK * r2K(0:1, k);
+		real G2 = r2K(0:1, k)' * GKr2;
+		eta2K[][k] = vpatch * (sK * G1 + 1 / sK * G2);
+		
+		// eig di GK: [V,E] = eig(GK);
+		dgesdd(GK, U, sigma, V);
+		emax = max(sigma(0), eps);
+		emin = max(sigma(1), eps);
+
+		// r1_star e' l'autovettore associato all'autovalore MINIMO
+		r1Kstar(0, k) = U(0, 1);
+		r1Kstar(1, k) = U(1, 1);
+		r2Kstar(0, k) = U(0, 0);
+		r2Kstar(1, k) = U(1, 0);
+		
+		// Ci cauteliamo contro valori nulli, troppo piccoli, o negativi degli autovalori
+		lm = 10 * eps * emin;
+		emax = emax * (emin > lm) + lm * (emin <= lm);
+
+		sKstar = min(sqrt(emax / emin), maxstretch);
+		
+		real vpatchHat = vpatch / (lam1K(k) * lam2K(k));
+		// prodlam = (toll^2 / (sqrt(sKstar * emin + 1/ sKstar * emax)))^(2. / 3);
+		prodlam = toll^2 / (Th.nt * vpatchHat * (sKstar * emin + 1 / sKstar * emax));
+		
+		// Il quoziente e' sK
+		// Ci cauteliamo contro valori troppo piccoli o troppo grandi ??
+		lam1star = sqrt(prodlam * sKstar);
+		lam2star = sqrt(prodlam / sKstar);
+
+		// Caso ISOtropo
+		real sumlamstar = lam1star^(-2) + lam2star^(-2);
+		lam1star = (0.5 * sumlamstar)^(-0.5);
+		lam1star = max(hmin, min(hmax, lam1star));
+		lam2star = lam1star;
+		
+		Mstar  = 1. / lam1star^2 * r1Kstar(0:1, k) * r1Kstar(0:1, k)';
+		Mstar += 1. / lam2star^2 * r2Kstar(0:1, k) * r2Kstar(0:1, k)';
+
+		eta2Kstar[][k] = vpatchHat * lam1star * lam2star * (sKstar * emin + 1 / sKstar * emax);
+
+		////////////////////////////////
+		//METRICA CORRENTE GLOBALE
+		//////////////////////////////
+		metricaold(0, Th[k][0]) += vol[][k] * MK(0, 0);
+		metricaold(0, Th[k][1]) += vol[][k] * MK(0, 0);
+		metricaold(0, Th[k][2]) += vol[][k] * MK(0, 0);
+		metricaold(1, Th[k][0]) += vol[][k] * MK(0, 1);
+		metricaold(1, Th[k][1]) += vol[][k] * MK(0, 1);
+		metricaold(1, Th[k][2]) += vol[][k] * MK(0, 1);
+		metricaold(2, Th[k][0]) += vol[][k] * MK(1, 1);
+		metricaold(2, Th[k][1]) += vol[][k] * MK(1, 1);
+		metricaold(2, Th[k][2]) += vol[][k] * MK(1, 1);	
+		
+		metrica(0, Th[k][0]) += vol[][k] * Mstar(0, 0);
+		metrica(0, Th[k][1]) += vol[][k] * Mstar(0, 0);
+		metrica(0, Th[k][2]) += vol[][k] * Mstar(0, 0);
+		metrica(1, Th[k][0]) += vol[][k] * Mstar(0, 1);
+		metrica(1, Th[k][1]) += vol[][k] * Mstar(0, 1);
+		metrica(1, Th[k][2]) += vol[][k] * Mstar(0, 1);
+		metrica(2, Th[k][0]) += vol[][k] * Mstar(1, 1);
+		metrica(2, Th[k][1]) += vol[][k] * Mstar(1, 1);
+		metrica(2, Th[k][2]) += vol[][k] * Mstar(1, 1);
+
+		Volpatchvertex(Th[k][0]) += vol[][k];
+		Volpatchvertex(Th[k][1]) += vol[][k];
+		Volpatchvertex(Th[k][2]) += vol[][k];
+	}
+	// ------- Fine Loop Sui Tetraedri ------- 
+
+	// ------- Loop Sui Vertici ------- 
+	for (int i = 0; i < nv; i++) {
+		metricaold(0, i) = metricaold(0, i) / Volpatchvertex(i);
+		metricaold(1, i) = metricaold(1, i) / Volpatchvertex(i);
+		metricaold(2, i) = metricaold(2, i) / Volpatchvertex(i);
+
+		metrica(0, i) = metrica(0, i) / Volpatchvertex(i);
+		metrica(1, i) = metrica(1, i) / Volpatchvertex(i);
+		metrica(2, i) = metrica(2, i) / Volpatchvertex(i);
+	}
+	// ------- Fine Loop Sui Vertici -------
+		
+	metricaold = 3.^-1 * metricaold;
+	metrica = 3.^-1 * omega * metrica + (1 - omega) * metricaold;
+		
+	MReturn(:, 0) = metrica(0, :);
+	MReturn(:, 1) = metrica(1, :);
+	MReturn(:, 2) = metrica(2, :);
+
+	// ------- EE Variance -------
+	real avgEta2K = eta2Kstar[].sum / ne;
+	real sumEta = 0.0;
+	evaluationParams["etaKVar"] = 0.0;
+	if (ne > 1) {
+		for (int k = 0; k < ne; k++) {
+			sumEta += sqrt(eta2Kstar[][k]);
+		}
+
+		evaluationParams["etaKVar"] = avgEta2K - (sumEta / ne)^2;
+	}
+
+	return MReturn;
+}

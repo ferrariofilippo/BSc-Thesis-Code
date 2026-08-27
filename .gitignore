@@ -1,0 +1,5 @@
+*.prompt
+*.notes
+info.md
+.claude/
+*.ps1

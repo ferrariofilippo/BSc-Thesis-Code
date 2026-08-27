@@ -1,0 +1,450 @@
+/* --------------------------------- README --------------------------------- */
+/* This FreeFem++ code adapts meshes for ADR problems.
+ * The script takes many input params, so to be called by a script.
+*/
+
+/* -------------------------------- Libraries ------------------------------- */
+load "iovtk"
+include "getARGV.idp"
+include "./Adaptation/ZZAdapt.idp"
+include "./Adaptation/computeEE.idp"
+
+/* ----------------------------- Default Values ----------------------------- */
+string MeshesDirectory = "/meshes/";
+// string MeshesDirectory = "/meshes-evaluation/";
+
+string DefaultFunction = "Costante";
+string DefaultBC = "Dirichlet";
+
+real DefaultMagnitude = 1.0;
+
+real DefaultToll = 1;
+real DefaltNbvx = 500000;
+int DefaultNx = 100;
+int DefaultNy = 100;
+int DefaultL13 = 1;
+int DefaultL24 = 1; 
+
+real DefaultAlpha = 1;
+real DefaultBeta = 1;
+
+int DefaultNoPlot = 1;
+
+bool Isotropic = true;
+
+int MinIterations = 5;
+int DefaultIterations = 30;
+real DefaultConvergenceThreshold = 0.01;
+
+/* ------------------------ Params read from the CLI ------------------------ */
+int sampleId = getARGV("-id", 0);
+
+string muKind = getARGV("-mukind", DefaultFunction);
+real muI = getARGV("-mu", 1.0e-3);
+
+string b1Kind = getARGV("-bkind1", DefaultFunction);
+string b2Kind = getARGV("-bkind2", DefaultFunction);
+real b1I = getARGV("-bI1", DefaultMagnitude);
+real b2I = getARGV("-bI2", DefaultMagnitude);
+
+string sigmaKind = getARGV("-sigmakind", DefaultFunction);
+real sigmaI = getARGV("-sigmaI", DefaultMagnitude);
+
+string fKind = getARGV("-fkind", DefaultFunction);
+real fI = getARGV("-fI", DefaultMagnitude);
+
+string L1BCType = getARGV("-l1bc", DefaultBC);
+string L1BCFun = getARGV("-l1bcfun", DefaultFunction);
+real L1BCI = getARGV("-l1bcI", DefaultMagnitude);
+
+string L2BCType = getARGV("-l2bc", DefaultBC);
+string L2BCFun = getARGV("-l2bcfun", DefaultFunction);
+real L2BCI = getARGV("-l2bcI", DefaultMagnitude);
+
+string L3BCType = getARGV("-l3bc", DefaultBC);
+string L3BCFun = getARGV("-l3bcfun", DefaultFunction);
+real L3BCI = getARGV("-l3bcI", DefaultMagnitude);
+
+string L4BCType = getARGV("-l4bc", DefaultBC);
+string L4BCFun = getARGV("-l4bcfun", DefaultFunction);
+real L4BCI = getARGV("-l4bcI", DefaultMagnitude);
+
+real toll = getARGV("-toll", DefaultToll);
+real nbvx = getARGV("-nbvx", DefaltNbvx);
+
+real alpha = getARGV("-alpha", DefaultAlpha);
+real beta = getARGV("-beta", DefaultBeta);
+
+real L13s = getARGV("-l13s", DefaultL13);
+real L24s = getARGV("-l24s", DefaultL24);
+
+real nx = getARGV("-nx", DefaultNx);
+real ny = getARGV("-ny", DefaultNy);
+
+real hmin = getARGV("-hmin", 1.e-3);
+
+int noPlot = getARGV("-noPlot", DefaultNoPlot);
+
+/* --------------------------------- Outputs -------------------------------- */
+real[string] evaluationParams;
+real ee;
+string meshName = "./data_out" + MeshesDirectory + sampleId + "_Th_";
+int[int] forder = [1];
+
+/* --------------------------- Heuristical Params --------------------------- */
+real toll2 = toll * toll;
+real gamma = 1.0;       // For Robin BC
+real hmax = max(L13s, L24s) * 2.5e-1;
+hmin = max(L13s, L24s) * hmin;
+
+
+macro grad(u) [dx(u), dy(u)] // EOM
+
+/* ------------------------- Functions Definitions -------------------------- */
+func f0 = 1;
+func f1 = L13s + L24s - (x + y);
+func f2 = sin(2 * pi * (alpha * x + beta * y));
+func f3 = cos(pi * (alpha * x - beta * y));
+func f4 = sin(pi * x) + sin(pi * y);
+func f5 = L13s * L24s - x * y;
+func f6 = log(1 + L13s + L24s - (x + y));
+func f7 = sin(pi * alpha * x) * sin(pi * beta * y);
+
+// Forcing term for the Boundary Layer Test Case --- Layer on the RIGHT border
+func f8 = 10*(
+    exp(-x)*((L24s-y)*((2*muI+b1I*(1-x))*y + (sigmaI-muI)*x*y) + (2*muI+b2I*(L24s-2*y))*x) +
+    exp(-L13s + (x-L13s)/alpha)*((L24s-y)*((2*muI/alpha-b1I*(1+x/alpha))*y + (muI/alpha^2-sigmaI)*x*y) - (2*muI+b2I*(L24s-2*y))*x)
+);
+
+// Forcing term for the Boundary Layer Test Case --- Layer on the TOP border
+func f13 = 10*(
+    exp(-y)*(y*(b1I+2*muI-2*b1I*x+(x-1)*x*(b2I+muI-sigmaI))-(x-1)*x*(b2I+2*muI))
+    -exp(-1+(y-1)/muI)*(-(x^2*((b2I-2)*muI+y*(b2I+muI*sigmaI-1)))+x*((b2I-2)*muI+y*(-2*b1I*muI+b2I+muI*sigmaI-1))+muI*sigmaI*(b1I+2*muI))/muI
+);
+
+// Forcing term for the Boundary Layer Test Case --- Layer on the LEFT border
+func f14 = 10/muI*exp(-1-x/muI)*(
+    -muI*(x-1)*(b2I+2*muI)*(exp(x*(1+1/muI))-1)+y^2*(-b1I*muI-b1I+muI*sigmaI-2*muI-muI*exp(x*(1+1/muI))*(muI+sigmaI-x*(b1I-muI+sigmaI))+b1I*x-muI*sigmaI*x+x-1)
+    +y*(b1I*muI+b1I+2*b2I*muI-muI*sigmaI+2*muI+muI*exp(x*(1+1/muI))*(-2*b2I+muI+sigmaI-x*(b1I-2*b2I-muI+sigmaI))-b1I*x-2*b2I*muI*x+muI*sigmaI*x+1)
+);
+
+// Border Conditions for the Internal Layer Test Case
+func f9 = 0.5*(tanh((2*x - 1)/muI)+1);
+func f10 = tanh(2*(1-y)/muI);
+
+// Forcing term for the Arrow Test Case --- Point of the arrow in (1, 1)
+macro alphaF(x,y) exp(-(y-x)^2/0.01) // EOM
+macro rhoF(z) (z - (exp((z-1)/epsilon) - exp(-1/epsilon)) / (1-exp(-1/epsilon))) // EOM
+macro deltaF(z) (1 - exp(-z/epsilon) + exp(-1/epsilon) - exp(-(1-z)/epsilon)) // EOM
+
+// Forcing term for the Arrow Test Case --- Point of the arrow in (0, 0)
+macro rhoF180(z) (1 - z - (exp(-z/epsilon) - exp(-1/epsilon)) / (1-exp(-1/epsilon))) // EOM
+macro deltaF180(z) (1 - exp(-(1-z)/epsilon) + exp(-1/epsilon) - exp(-z/epsilon)) // EOM
+
+/* ------------------------- ADR Params Definition -------------------------- */
+func mu =
+    (muKind == "Funzione 1") ?  muI * f1 :
+    ((muKind == "Funzione 2") ? muI * f2 :
+    ((muKind == "Funzione 3") ? muI * f3 :
+    ((muKind == "Funzione 4") ? muI * f4 :
+    ((muKind == "Funzione 5") ? muI * f5 :
+    ((muKind == "Funzione 6") ? muI * f6 :
+    ((muKind == "Funzione 7") ? muI * f7 :
+    ((muKind == "Funzione 8") ? muI * f8 :
+    ((muKind == "Funzione 9") ? muI * f9 :
+    ((muKind == "Funzione 10") ? muI * f10 : muI * f0)))))))));
+
+func sigma = 
+    (sigmaKind == "Funzione 1") ? sigmaI * f1 :
+    ((sigmaKind == "Funzione 2") ? sigmaI * f2 :
+    ((sigmaKind == "Funzione 3") ? sigmaI * f3 :
+    ((sigmaKind == "Funzione 4") ? sigmaI * f4 :
+    ((sigmaKind == "Funzione 5") ? sigmaI * f5 :
+    ((sigmaKind == "Funzione 6") ? sigmaI * f6 :
+    ((sigmaKind == "Funzione 7") ? sigmaI * f7 :
+    ((sigmaKind == "Funzione 8") ? sigmaI * f8 :
+    ((sigmaKind == "Funzione 9") ? sigmaI * f9 :
+    ((sigmaKind == "Funzione 10") ? sigmaI * f10 : sigmaI * f0)))))))));
+
+func b1 =
+    (b1Kind == "Funzione 1") ?  b1I * f1 :
+    ((b1Kind == "Funzione 2") ? b1I * f2 :
+    ((b1Kind == "Funzione 3") ? b1I * f3 :
+    ((b1Kind == "Funzione 4") ? b1I * f4 :
+    ((b1Kind == "Funzione 5") ? b1I * f5 :
+    ((b1Kind == "Funzione 6") ? b1I * f6 :
+    ((b1Kind == "Funzione 7") ? b1I * f7 :
+    ((b1Kind == "Funzione 8") ? b1I * f8 :
+    ((b1Kind == "Funzione 9") ? b1I * f9 :
+    ((b1Kind == "Funzione 10") ? b1I * f10 : b1I * f0)))))))));
+
+func b2 = 
+    (b2Kind == "Funzione 1") ?  b2I * f1 :
+    ((b2Kind == "Funzione 2") ? b2I * f2 :
+    ((b2Kind == "Funzione 3") ? b2I * f3 :
+    ((b2Kind == "Funzione 4") ? b2I * f4 :
+    ((b2Kind == "Funzione 5") ? b2I * f5 :
+    ((b2Kind == "Funzione 6") ? b2I * f6 :
+    ((b2Kind == "Funzione 7") ? b2I * f7 :
+    ((b2Kind == "Funzione 8") ? b2I * f8 :
+    ((b2Kind == "Funzione 9") ? b2I * f9 :
+    ((b2Kind == "Funzione 10") ? b2I * f10 : b2I * f0)))))))));
+
+func forcing = 
+    (fKind == "Funzione 1") ?  fI * f1 :
+    ((fKind == "Funzione 2") ? fI * f2 :
+    ((fKind == "Funzione 3") ? fI * f3 :
+    ((fKind == "Funzione 4") ? fI * f4 :
+    ((fKind == "Funzione 5") ? fI * f5 :
+    ((fKind == "Funzione 6") ? fI * f6 :
+    ((fKind == "Funzione 7") ? fI * f7 :
+    ((fKind == "Funzione 8") ? fI * f8 :
+    ((fKind == "Funzione 9") ? fI * f9 :
+    ((fKind == "Funzione 13") ? fI * f13 :
+    ((fKind == "Funzione 14") ? fI * f14 :
+    ((fKind == "Funzione 10") ? fI * f10 : fI * f0)))))))))));
+
+/* -------------------- Define Border Condition Functions ------------------- */
+func L1BC = 
+    (L1BCFun == "Funzione 1") ?  L1BCI * f1:
+    ((L1BCFun == "Funzione 2") ? L1BCI * f2 :
+    ((L1BCFun == "Funzione 3") ? L1BCI * f3 :
+    ((L1BCFun == "Funzione 4") ? L1BCI * f4 :
+    ((L1BCFun == "Funzione 5") ? L1BCI * f5 :
+    ((L1BCFun == "Funzione 6") ? L1BCI * f6 :
+    ((L1BCFun == "Funzione 7") ? L1BCI * f7 :
+    ((L1BCFun == "Funzione 8") ? L1BCI * f8 :
+    ((L1BCFun == "Funzione 9") ? L1BCI * f9 :
+    ((L1BCFun == "Funzione 10") ? L1BCI * f10 : L1BCI * f0)))))))));
+
+func L2BC =
+    (L2BCFun == "Funzione 1") ?  L2BCI * f1 :
+    ((L2BCFun == "Funzione 2") ? L2BCI * f2 :
+    ((L2BCFun == "Funzione 3") ? L2BCI * f3 :
+    ((L2BCFun == "Funzione 4") ? L2BCI * f4 :
+    ((L2BCFun == "Funzione 5") ? L2BCI * f5 :
+    ((L2BCFun == "Funzione 6") ? L2BCI * f6 :
+    ((L2BCFun == "Funzione 7") ? L2BCI * f7 :
+    ((L2BCFun == "Funzione 8") ? L2BCI * f8 :
+    ((L2BCFun == "Funzione 9") ? L2BCI * f9 :
+    ((L2BCFun == "Funzione 10") ? L2BCI * f10 : L2BCI * f0)))))))));
+
+func L3BC = 
+    (L3BCFun == "Funzione 1") ?  L3BCI * f1 :
+    ((L3BCFun == "Funzione 2") ? L3BCI * f2 :
+    ((L3BCFun == "Funzione 3") ? L3BCI * f3 :
+    ((L3BCFun == "Funzione 4") ? L3BCI * f4 :
+    ((L3BCFun == "Funzione 5") ? L3BCI * f5 :
+    ((L3BCFun == "Funzione 6") ? L3BCI * f6 :
+    ((L3BCFun == "Funzione 7") ? L3BCI * f7 :
+    ((L3BCFun == "Funzione 8") ? L3BCI * f8 :
+    ((L3BCFun == "Funzione 9") ? L3BCI * f9 :
+    ((L3BCFun == "Funzione 10") ? L3BCI * f10 : L3BCI * f0)))))))));
+
+func L4BC =
+    (L4BCFun == "Funzione 1") ?  L4BCI * f1 :
+    ((L4BCFun == "Funzione 2") ? L4BCI * f2 :
+    ((L4BCFun == "Funzione 3") ? L4BCI * f3 :
+    ((L4BCFun == "Funzione 4") ? L4BCI * f4 :
+    ((L4BCFun == "Funzione 5") ? L4BCI * f5 :
+    ((L4BCFun == "Funzione 6") ? L4BCI * f6 :
+    ((L4BCFun == "Funzione 7") ? L4BCI * f7 :
+    ((L4BCFun == "Funzione 8") ? L4BCI * f8 :
+    ((L4BCFun == "Funzione 9") ? L4BCI * f9 :
+    ((L4BCFun == "Funzione 10") ? L4BCI * f10 : L4BCI * f0)))))))));
+
+/* ------------------------ Define Border Conditions ------------------------ */
+// This label is not used by any border.
+// It is used to assign border conditions conditionally.
+int fakeBorderLabel = -100;
+
+int bc1DirichletLabel = L1BCType == "Dirichlet" ? 1 : fakeBorderLabel;
+int bc2DirichletLabel = L2BCType == "Dirichlet" ? 2 : fakeBorderLabel;
+int bc3DirichletLabel = L3BCType == "Dirichlet" ? 3 : fakeBorderLabel;
+int bc4DirichletLabel = L4BCType == "Dirichlet" ? 4 : fakeBorderLabel;
+
+// If 1 the BC is activated 
+int neumannOnL1 = L1BCType == "Neumann" ? 1 : 0;
+int neumannOnL2 = L2BCType == "Neumann" ? 1 : 0;
+int neumannOnL3 = L3BCType == "Neumann" ? 1 : 0;
+int neumannOnL4 = L4BCType == "Neumann" ? 1 : 0;
+
+int robinOnL1 = L1BCType == "Robin" ? 1 : 0;
+int robinOnL2 = L2BCType == "Robin" ? 1 : 0;
+int robinOnL3 = L3BCType == "Robin" ? 1 : 0;
+int robinOnL4 = L4BCType == "Robin" ? 1 : 0;
+
+/* ---------------------------- Define the Domain --------------------------- */
+mesh Th = square(nx, ny, [x * L13s, y * L24s]);
+
+int lastNT = Th.nt;
+int lastIt = 0;
+real reduction = DefaultConvergenceThreshold + 1;
+
+// The Arrow Test Case needs a different handling from the others.
+if (fKind != "Funzione 11" && fKind != "Funzione 15") {
+    for (int it = 0; it < DefaultIterations + 1; it++) {
+        fespace Vh(Th, P1);
+        Vh uh, vh;
+
+/* ---------------------- Solves and Plots the problem ---------------------- */
+        problem adr(uh, vh, solver=sparsesolver) =
+            int2d(Th)( mu*grad(uh)'*grad(vh) )
+            + int2d(Th)( (b1*dx(uh) + b2*dy(uh))*vh )
+            + int2d(Th)( sigma*uh*vh )
+            - int2d(Th)( forcing*vh )
+
+            // Neumann BC
+            - int1d(Th, 1)( (neumannOnL1+robinOnL1)*L1BC*vh )
+            - int1d(Th, 2)( (neumannOnL2+robinOnL2)*L2BC*vh )
+            - int1d(Th, 3)( (neumannOnL3+robinOnL3)*L3BC*vh )
+            - int1d(Th, 4)( (neumannOnL4+robinOnL4)*L4BC*vh )
+            
+            // Robin BC
+            + int1d(Th, 1)( robinOnL1*gamma*uh*vh )
+            + int1d(Th, 2)( robinOnL2*gamma*uh*vh )
+            + int1d(Th, 3)( robinOnL3*gamma*uh*vh )
+            + int1d(Th, 4)( robinOnL4*gamma*uh*vh )
+
+            // Dirichlet BC
+            + on(bc1DirichletLabel, uh=L1BC)
+            + on(bc2DirichletLabel, uh=L2BC)
+            + on(bc3DirichletLabel, uh=L3BC)
+            + on(bc4DirichletLabel, uh=L4BC)
+        ;
+
+        adr;
+
+        ee = computeEE(Th, uh[]);
+        
+        if (noPlot != 1) {
+            plot(
+                Th, uh, cmm="u "+it, fill=(it == 0),
+                value=(it == 0), wait=(it == DefaultIterations)
+            );
+        }
+/* ---------------------------- Output CSV Values --------------------------- */
+        cout << sampleId << ",";
+        cout << it << ",";
+        cout << Th.nt << ",";
+        cout << Th.hmin << ",";
+        cout << Th.hmax << ",";
+        cout << Th.nv << ",";
+        cout << evaluationParams["etaKVar"] << ",";
+        cout << ee << "," << endl;
+
+/* ----------------------------- Mesh Adaptation ---------------------------- */
+
+        lastIt = it;
+        // Convergence reached. Stop adaptation
+        if (reduction < DefaultConvergenceThreshold && it >= MinIterations)
+            it = DefaultIterations;
+
+        if (it <  DefaultIterations) {
+            Th = ZZAdapt(
+                Th, uh[], hmin, hmax, toll, nbvx, Isotropic,
+                sampleId, evaluationParams
+            );
+
+            reduction = abs(1.0 * Th.nt - lastNT) / Th.nt;
+            lastNT = Th.nt;
+        } else {
+        // } if (it >= 1) {
+            savevtk(
+                meshName + "Iteration_" + lastIt + ".vtu",
+                Th, uh, dataname="uh", order=forder
+            );
+        }
+    }
+/* -------------------------------------------------------------------------- */
+
+} else {
+
+/* ------------------------ Arrow Test Case Handling ------------------------ */ 
+    for (int it = 0; it < DefaultIterations + 1; it++) {
+        fespace Vh1(Th, P1);
+        fespace Vh2(Th, P2);
+
+        Vh1 uhP1;
+        Vh2 uh, vh, fh, uhEx;
+        
+        if (fKind == "Funzione 11") {
+            uhEx = (alphaF(x,y)+rhoF(x)*rhoF(y))*deltaF(x)*deltaF(y);
+        } else {
+            uhEx = (alphaF(x,y)+rhoF180(x)*rhoF180(y))*deltaF180(x)*deltaF180(y);
+        }
+
+        fh = -mu(x,y)*(dxx(uhEx)+dyy(uhEx)) + b1(x,y)*dx(uhEx) + b2(x,y)*dy(uhEx) + sigma(x,y)*uhEx;
+
+/* ---------------------- Solves and Plots the problem ---------------------- */
+        problem adr(uh, vh, solver=sparsesolver) =
+            int2d(Th)( mu*grad(uh)'*grad(vh) )
+            + int2d(Th)( (b1*dx(uh) + b2*dy(uh))*vh )
+            + int2d(Th)( sigma*uh*vh )
+            - int2d(Th)( fh*vh )
+
+            // Neumann BC
+            - int1d(Th, 1)( (neumannOnL1+robinOnL1)*L1BC*vh )
+            - int1d(Th, 2)( (neumannOnL2+robinOnL2)*L2BC*vh )
+            - int1d(Th, 3)( (neumannOnL3+robinOnL3)*L3BC*vh )
+            - int1d(Th, 4)( (neumannOnL4+robinOnL4)*L4BC*vh )
+            
+            // Robin BC
+            + int1d(Th, 1)( robinOnL1*gamma*uh*vh )
+            + int1d(Th, 2)( robinOnL2*gamma*uh*vh )
+            + int1d(Th, 3)( robinOnL3*gamma*uh*vh )
+            + int1d(Th, 4)( robinOnL4*gamma*uh*vh )
+
+            // Dirichlet BC
+            + on(bc1DirichletLabel, uh=L1BC)
+            + on(bc2DirichletLabel, uh=L2BC)
+            + on(bc3DirichletLabel, uh=L3BC)
+            + on(bc4DirichletLabel, uh=L4BC)
+        ;
+
+        adr;
+
+        uhP1 = uh;
+
+        ee = computeEE(Th, uhP1[]);
+        
+        if (noPlot != 1) {
+            plot(
+                Th, uhP1, cmm="u " + it, fill=(it == 0),
+                value=(it == 0), wait=(it == DefaultIterations)
+            );
+        }
+
+/* ------------------------------ Output Values ----------------------------- */
+        cout << sampleId << ",";
+        cout << it << ",";
+        cout << Th.nt << ",";
+        cout << Th.hmin << ",";
+        cout << Th.hmax << ",";
+        cout << Th.nv << ",";
+        cout << evaluationParams["etaKVar"] << ",";
+        cout << ee << "," << endl;
+
+/* ----------------------------- Mesh Adaptation ---------------------------- */
+        lastIt = it;
+        // Convergence reached. Stop a daptation
+        if (reduction < DefaultConvergenceThreshold && it >= MinIterations)
+            it = DefaultIterations + 1;
+
+        if (it <  DefaultIterations) {
+            Th = ZZAdapt(
+                Th, uhP1[], hmin, hmax, toll, nbvx, Isotropic,
+                sampleId, evaluationParams
+            );
+
+            reduction = abs(1.0 * Th.nt - lastNT) / Th.nt;
+            lastNT = Th.nt;
+        } else {
+        // } if (it >= 1) {
+            savevtk(
+                meshName + "Iteration_" + lastIt + ".vtu",
+                Th, uhP1, dataname="uh", order=forder
+            );
+        }
+    }
+}

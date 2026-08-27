@@ -1,0 +1,45 @@
+/* -------------------------------- Libraries ------------------------------- */
+load "mshmet"
+include "./freefem/Adaptation/makemetrica.idp"
+
+func mesh ZZAdapt(
+    mesh & Th,
+    real[int] & u,
+    real hmin,
+    real hmax,
+    real toll,
+    int nbvx,
+    bool iso,
+    int meshId,
+    real[string] & evaluations
+) {
+/* ----------------------------- Weight-Lifting ----------------------------- */
+    real omega = 0.85;
+    real eps = hmin / 100;
+    fespace Xh1 (Th, P1);
+
+    // Function to adapt
+    Xh1 v = 0.;
+    v[] = u;
+    
+    fespace Mh(Th, [P1, P1, P1]);
+    Mh [m11, m12, m22] = [0., 0., 0.];
+    Xh1 Mstar11, Mstar12, Mstar22;
+    
+/* ------------------------------ Initial Mesh ------------------------------ */
+    real[int,int] Mstar(Th.nv, 3);
+    Mstar = makemetrica(toll, v[], hmax, hmin, Th, omega, evaluations);
+    Mstar11[] = Mstar(:, 0);
+    Mstar12[] = Mstar(:, 1);
+    Mstar22[] = Mstar(:, 2);
+    [m11, m12, m22] = [Mstar11, Mstar12, Mstar22];
+
+/* ------------------------------ Adapted Mesh ------------------------------ */
+    // Adapting Phase: Periodic (An)Isotropic Mesh Adaptation.
+    // Th = adaptmesh(Th, nbvx=nbvx, metric=[Mstar11[], Mstar12[], Mstar22[]], iso=iso);
+    Th = adaptmesh(
+        Th, nbvx=nbvx, metric=[Mstar11[], Mstar12[], Mstar22[]]
+    );
+
+    return Th;
+}
