@@ -44,7 +44,7 @@
             }
         }
 
-        public static IMathFunction[] GetInstances(int n = 600, float min = 0.0f, float max = 1e1f)
+        public static IMathFunction[] GetInstances(int n = 600, float min = 0.0f, float max = 5e1f)
         {
             int howMany = 32;
             var instances = new IMathFunction[howMany * howMany / 16 * 4];

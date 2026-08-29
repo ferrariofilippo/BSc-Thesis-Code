@@ -52,7 +52,7 @@
 
         public static IMathFunction[] GetInstances(int n = 600, float min = 0.0f, float max = 1e2f)
         {
-            float[] values = { 1e-4f, 1e-3f, 1e-1f, 0.5f, 1.0f };
+            float[] values = { 2e-4f, 1e-3f, 1e-1f, 0.5f, 1.0f };
 
             var instances = new IMathFunction[values.Length * values.Length * values.Length * values.Length];
             var idx = 0;

@@ -75,12 +75,13 @@ def main(cfg: DictConfig) -> float:
         input_dim=cfg.model.input_dim,
         hidden_1_dim=cfg.model.hidden_1_dim,
         hidden_2_dim=cfg.model.hidden_2_dim,
+        hidden_3_dim=cfg.model.hidden_3_dim,
         latent_dim=cfg.model.latent_dim,
         hidden_activation=cfg.model.hidden_activation,
         latent_activation=cfg.model.latent_activation,
         output_activation=cfg.model.output_activation,
         dropout_1 = 0.0,
-        dropout_2 = 0.25,
+        dropout_2 = 0.1,
     ).to(device)
 
     loss_fn = nn.MSELoss()

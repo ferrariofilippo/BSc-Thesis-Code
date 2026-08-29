@@ -30,7 +30,7 @@
             }
         }
 
-        public static IMathFunction[] GetInstances(int n = 1000, float min = 0.0f, float max = 1e1f)
+        public static IMathFunction[] GetInstances(int n = 1000, float min = 0.0f, float max = 5e1f)
         {
             int howMany = (int)(Math.Cbrt(n)) / 2 * 2;
             var instances = new IMathFunction[howMany * howMany * howMany];

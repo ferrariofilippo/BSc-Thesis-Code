@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="dataset\" />
-    <Folder Include="Utils\MathFunctions\" />
   </ItemGroup>
 
 </Project>

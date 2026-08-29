@@ -2,7 +2,7 @@
 {
     internal class Arrow : IMathFunction
     {
-        float h = 1e-4f;
+        float h = 5e-5f;
 
         float m = 0.01f;
 
@@ -69,7 +69,7 @@
 
         public static IMathFunction[] GetInstances(int n = 600, float min = 0.0f, float max = 1e2f)
         {
-            float[] mus = { 1e-4f, 1e-3f, 1e-2f, 1 };
+            float[] mus = { 5e-4f, 1e-3f, 1e-2f, 1e-1f };
             float[] sigmas = { 0, 0.5f, 1 };
             float[] bs = { -1, -0.5f, 0.0f, 0.5f, 1 };
 

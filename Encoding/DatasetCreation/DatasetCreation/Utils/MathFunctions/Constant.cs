@@ -24,7 +24,7 @@
             }
         }
 
-        public static IMathFunction[] GetInstances(int n = 2700, float min = 0.0f, float max = 2e1f)
+        public static IMathFunction[] GetInstances(int n = 2700, float min = 0.0f, float max = 1.5e1f)
         {
             n = n / 2 * 2;
             var offset = 0;

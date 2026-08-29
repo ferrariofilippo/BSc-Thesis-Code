@@ -10,19 +10,18 @@ ACTIVATIONS = {
 }
 
 class Autoencoder(nn.Module):
-    
+
     def __init__(
         self,
-        input_dim: int = 25,
-        hidden_1_dim: int = 16,
-        hidden_2_dim: int = 8,
-        hidden_3_dim: int = 8,
-        latent_dim: int = 3,
+        input_dim: int,
+        hidden_1_dim: int,
+        hidden_2_dim: int,
+        latent_dim: int,
         hidden_activation: str = "relu",
         latent_activation: str = "tanh",
         output_activation: str = "none",
-        dropout_1: float = 0.0,
-        dropout_2: float = 0.0,
+        dropout1: float = 0.0,
+        dropout2: float = 0.0,
     ):
         super().__init__()
 
@@ -40,21 +39,16 @@ class Autoencoder(nn.Module):
         self.encoder = nn.Sequential(
             nn.Linear(input_dim, hidden_1_dim),
             hidden_act(),
-            nn.Dropout(p=dropout_1),
+            nn.Dropout(p=dropout1),
             nn.Linear(hidden_1_dim, hidden_2_dim),
             hidden_act(),
-            nn.Dropout(p=dropout_2),
-            nn.Linear(hidden_2_dim, hidden_3_dim),
-            hidden_act(),
-            nn.Dropout(p=dropout_2),
-            nn.Linear(hidden_3_dim, latent_dim),
+            nn.Dropout(p=dropout2),
+            nn.Linear(hidden_2_dim, latent_dim),
             latent_act(),
         )
 
         self.decoder = nn.Sequential(
-            nn.Linear(latent_dim, hidden_3_dim),
-            hidden_act(),
-            nn.Linear(hidden_3_dim, hidden_2_dim),
+            nn.Linear(latent_dim, hidden_2_dim),
             hidden_act(),
             nn.Linear(hidden_2_dim, hidden_1_dim),
             hidden_act(),

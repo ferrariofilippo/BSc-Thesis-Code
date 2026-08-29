@@ -17,7 +17,8 @@ void CreateDataset()
         () => TanhBC.GetInstances(),
         () => Logarithm.GetInstances(),
         () => Trigonometric.GetInstances(),
-        () => Hyperbolic.GetInstances()
+        () => Hyperbolic.GetInstances(),
+        () => Fractionals.GetInstances()
     ];
 
     Console.WriteLine("---Starting---");
