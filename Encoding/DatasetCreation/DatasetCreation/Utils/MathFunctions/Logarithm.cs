@@ -56,6 +56,9 @@
                     {
                         Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Log(SafeLogInput(c * (x + y) + d)));
                         Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Log10(SafeLogInput(c * (float)Math.Sqrt(x * x + y * y) + d)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Log10(SafeLogInput(c * (float)Math.Sqrt(x * x * y * y) + d)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Log10(SafeLogInput(c * (float)Math.Sqrt(x * x * y * y + x) + d)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Log10(SafeLogInput(c * (float)Math.Sqrt(x * x * y * y + x * y) + d)));
                     }
                 }
 

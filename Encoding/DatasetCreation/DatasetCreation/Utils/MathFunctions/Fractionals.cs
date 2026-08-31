@@ -15,16 +15,25 @@
 
         public void Compute2D()
         {
-            if (a == 0.0f) return;
+            if (a <= 0.0f) return;
+            float b = a * 5.0f;
             for (int i = 0; i < 3; i++)
             {
                 Evaluator.EvalAndSave2DFunction((x, y) => (1.0f + a) / (1.0f + x + y));
                 Evaluator.EvalAndSave2DFunction((x, y) => (1.0f + a) / (1.0f + x * x + y * y));
-                Evaluator.EvalAndSave2DFunction((x, y) => (1.0f + a) / (3.0f - x - y));
-                Evaluator.EvalAndSave2DFunction((x, y) => 1.0f / (1.0f + a * (x + y)));
-                Evaluator.EvalAndSave2DFunction((x, y) => 1.0f / (1.0f + a + x - y));
+                Evaluator.EvalAndSave2DFunction((x, y) => 1f * (1.0f + a) / (3.0f - x - y));
+                Evaluator.EvalAndSave2DFunction((x, y) => 1f / (1.0f + b * (x + y)));
+                Evaluator.EvalAndSave2DFunction((x, y) => 1f / (1.0f + b + x - y));
+                Evaluator.EvalAndSave2DFunction((x, y) => 1f / (1.0f + b + (x - y)));
 
-                a *= 0.9f;
+                Evaluator.EvalAndSave2DFunction((x, y) => -(1.0f + a) / (1.0f + x + y));
+                Evaluator.EvalAndSave2DFunction((x, y) => -(1.0f + a) / (1.0f + x * x + y * y));
+                Evaluator.EvalAndSave2DFunction((x, y) => -1f * (1.0f + a) / (3.0f - x - y));
+                Evaluator.EvalAndSave2DFunction((x, y) => -1f / (1.0f + b * (x + y)));
+                Evaluator.EvalAndSave2DFunction((x, y) => -1f / (1.0f + b + x - y));
+                Evaluator.EvalAndSave2DFunction((x, y) => -1f / (1.0f + b + (x - y)));
+
+                a *= 5.0f;
             }
         }
 

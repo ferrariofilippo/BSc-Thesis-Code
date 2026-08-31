@@ -18,6 +18,7 @@ namespace DatasetCreation.Utils
             int intervals = 128
         )
         {
+            return;
             float[] values = new float[intervals];
             for (int i = 0; i < intervals; i++)
             {

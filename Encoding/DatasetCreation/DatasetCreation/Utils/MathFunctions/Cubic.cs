@@ -26,11 +26,13 @@
                 Evaluator.EvalAndSave2DFunction((x, y) => a * y * y * x + c * x + d);
                 Evaluator.EvalAndSave2DFunction((x, y) => a * x * x * x + b * y * y + c * x * x + d);
                 Evaluator.EvalAndSave2DFunction((x, y) => a * x * x * x + b * y * y * y + c * x + d * y);
+                Evaluator.EvalAndSave2DFunction((x, y) => a * x * x * y + b * x * y + c * x * x + d);
+                Evaluator.EvalAndSave2DFunction((x, y) => a * x * y * y + b * y * y + c * x * y + d);
 
-                a *= 1.3f;
-                b *= 1.3f;
-                c *= 1.3f;
-                d *= 1.3f;
+                a *= 1.5f;
+                b *= 1.5f;
+                c *= 1.5f;
+                d *= 1.5f;
             }
         }
 

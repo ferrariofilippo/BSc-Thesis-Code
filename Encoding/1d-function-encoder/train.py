@@ -81,7 +81,7 @@ def main(cfg: DictConfig) -> float:
         latent_activation=cfg.model.latent_activation,
         output_activation=cfg.model.output_activation,
         dropout_1 = 0.0,
-        dropout_2 = 0.1,
+        dropout_2 = 0.0,
     ).to(device)
 
     loss_fn = nn.MSELoss()

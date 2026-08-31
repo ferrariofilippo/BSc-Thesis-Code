@@ -4,7 +4,7 @@ defaults:
   - training: default
   - _self_
 
-seed: 11
+seed: 7
 
 gpu_ids: [0]
 

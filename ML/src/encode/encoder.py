@@ -90,6 +90,7 @@ class IEncoder:
             input_dim=model_cfg.input_dim,
             hidden_1_dim=model_cfg.hidden_1_dim,
             hidden_2_dim=model_cfg.hidden_2_dim,
+            hidden_3_dim=model_cfg.hidden_3_dim,
             latent_dim=model_cfg.latent_dim,
             hidden_activation=model_cfg.hidden_activation,
             latent_activation=model_cfg.latent_activation,

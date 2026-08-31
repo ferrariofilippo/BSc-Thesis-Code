@@ -16,6 +16,7 @@ class Autoencoder(nn.Module):
         input_dim: int,
         hidden_1_dim: int,
         hidden_2_dim: int,
+        hidden_3_dim: int,
         latent_dim: int,
         hidden_activation: str = "relu",
         latent_activation: str = "tanh",
@@ -43,12 +44,17 @@ class Autoencoder(nn.Module):
             nn.Linear(hidden_1_dim, hidden_2_dim),
             hidden_act(),
             nn.Dropout(p=dropout2),
-            nn.Linear(hidden_2_dim, latent_dim),
+            nn.Linear(hidden_2_dim, hidden_3_dim),
+            hidden_act(),
+            nn.Dropout(p=dropout2),
+            nn.Linear(hidden_3_dim, latent_dim),
             latent_act(),
         )
 
         self.decoder = nn.Sequential(
-            nn.Linear(latent_dim, hidden_2_dim),
+            nn.Linear(latent_dim, hidden_3_dim),
+            hidden_act(),
+            nn.Linear(hidden_3_dim, hidden_2_dim),
             hidden_act(),
             nn.Linear(hidden_2_dim, hidden_1_dim),
             hidden_act(),

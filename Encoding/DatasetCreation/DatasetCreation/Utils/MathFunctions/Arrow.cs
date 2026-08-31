@@ -43,6 +43,21 @@
 
                     return -mu * (dxx_u + dyy_u) + b1 * dx_u + b2 * dy_u + sigma * u;
                 });
+                Evaluator.EvalAndSave2DFunction((float x, float y) =>
+                {
+                    float u = uh(x, y);
+                    float u_px = uh(x + h, y);
+                    float u_mx = uh(x - h, y);
+                    float u_py = uh(x, y + h);
+                    float u_my = uh(x, y - h);
+
+                    float dx_u = (u_px - u_mx) / (2.0f * h);
+                    float dy_u = (u_py - u_my) / (2.0f * h);
+                    float dxx_u = (u_px - 2.0f * u + u_mx) / (h * h);
+                    float dyy_u = (u_py - 2.0f * u + u_my) / (h * h);
+
+                    return mu * (dxx_u + dyy_u) - b1 * dx_u - b2 * dy_u - sigma * u;
+                });
 
                 Func<float, float, float> uh180 = (x, y) =>
                     (alpha(x, y, m) + rho180(x, m) * rho180(y, m)) * delta180(x, m) * delta180(y, m);
@@ -61,6 +76,21 @@
                     float dyy_u = (u_py - 2.0f * u + u_my) / (h * h);
 
                     return -mu * (dxx_u + dyy_u) + b1 * dx_u + b2 * dy_u + sigma * u;
+                });
+                Evaluator.EvalAndSave2DFunction((float x, float y) =>
+                {
+                    float u = uh180(x, y);
+                    float u_px = uh180(x + h, y);
+                    float u_mx = uh180(x - h, y);
+                    float u_py = uh180(x, y + h);
+                    float u_my = uh180(x, y - h);
+
+                    float dx_u = (u_px - u_mx) / (2.0f * h);
+                    float dy_u = (u_py - u_my) / (2.0f * h);
+                    float dxx_u = (u_px - 2.0f * u + u_mx) / (h * h);
+                    float dyy_u = (u_py - 2.0f * u + u_my) / (h * h);
+
+                    return mu * (dxx_u + dyy_u) - b1 * dx_u - b2 * dy_u - sigma * u;
                 });
 
                 m *= 1.3f;

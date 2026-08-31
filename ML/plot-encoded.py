@@ -292,38 +292,38 @@ def main() -> None:
     output_directory = Path(config.output_dir)
     output_directory.mkdir(parents=True, exist_ok=True)
 
-    encoder_1d = Encoder1D()
+    # encoder_1d = Encoder1D()
     encoder_2d = Encoder2D()
     generated_files: list[Path] = []
 
-    x_plot = np.linspace(0.0, 1.0, config.n_plot_1d, endpoint=True)
-    for index, target in enumerate(get_targets_1d(), start=1):
-        actual = _real_finite(target.function(x_plot), x_plot.shape, target.label)
-        exact_coefficients = encoder_1d.get_chebyshev_coefficients(target.function)
-        predicted_coefficients = encoder_1d.get_reconstructed(target.function)
-        exact_transform = evaluate_chebyshev_1d(x_plot, exact_coefficients)
-        autoencoder_prediction = evaluate_chebyshev_1d(
-            x_plot, predicted_coefficients
-        )
+    # x_plot = np.linspace(0.0, 1.0, config.n_plot_1d, endpoint=True)
+    # for index, target in enumerate(get_targets_1d(), start=1):
+    #     actual = _real_finite(target.function(x_plot), x_plot.shape, target.label)
+    #     exact_coefficients = encoder_1d.get_chebyshev_coefficients(target.function)
+    #     predicted_coefficients = encoder_1d.get_reconstructed(target.function)
+    #     exact_transform = evaluate_chebyshev_1d(x_plot, exact_coefficients)
+    #     autoencoder_prediction = evaluate_chebyshev_1d(
+    #         x_plot, predicted_coefficients
+    #     )
 
-        print_error_metrics(
-            "1D",
-            target.label,
-            actual,
-            exact_transform,
-            autoencoder_prediction,
-        )
-        output_path = output_directory / f"plot_1d_{index:02d}_{target.slug}.png"
-        plot_1d_comparison(
-            target.label,
-            x_plot,
-            actual,
-            exact_transform,
-            autoencoder_prediction,
-            output_path,
-            config.figure_dpi,
-        )
-        generated_files.append(output_path)
+    #     print_error_metrics(
+    #         "1D",
+    #         target.label,
+    #         actual,
+    #         exact_transform,
+    #         autoencoder_prediction,
+    #     )
+    #     output_path = output_directory / f"plot_1d_{index:02d}_{target.slug}.png"
+    #     plot_1d_comparison(
+    #         target.label,
+    #         x_plot,
+    #         actual,
+    #         exact_transform,
+    #         autoencoder_prediction,
+    #         output_path,
+    #         config.figure_dpi,
+    #     )
+    #     generated_files.append(output_path)
 
     grid = np.linspace(0.0, 1.0, config.n_plot_2d, endpoint=True)
     x_mesh, y_mesh = np.meshgrid(grid, grid, indexing="ij")

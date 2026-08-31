@@ -51,6 +51,8 @@
                     if (a != 0.0f)
                     {
                         Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Sinh(SafeHyperbolicInput(a * x)) + b * (float)Math.Sinh(SafeHyperbolicInput(a * y)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Cosh(SafeHyperbolicInput(a * x)) + b * (float)Math.Cosh(SafeHyperbolicInput(a * y)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Tanh(SafeHyperbolicInput(a * x)) + b * (float)Math.Sinh(SafeHyperbolicInput(a * y)));
                         Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Sinh(SafeHyperbolicInput(a * x * y)));
                         Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Cosh(SafeHyperbolicInput(a * (float)Math.Sqrt(x * x + y * y))));
                         Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Tanh(a * (x + y)));
@@ -59,13 +61,15 @@
                     if (c != 0.0f)
                     {
                         Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Sinh(SafeHyperbolicInput(c * (x + y))));
+                        Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Cosh(SafeHyperbolicInput(c * (x + y))));
+                        Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Tanh(SafeHyperbolicInput(c * (x + y))));
                         Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Tanh(c * x) + b * (float)Math.Tanh(c * y));
                     }
                 }
 
-                a *= 1.2f;
-                b *= 1.2f;
-                c *= 1.2f;
+                a *= 1.5f;
+                b *= 1.5f;
+                c *= 1.5f;
             }
         }
 

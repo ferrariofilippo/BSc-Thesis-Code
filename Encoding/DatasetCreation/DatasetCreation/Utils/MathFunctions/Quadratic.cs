@@ -14,6 +14,9 @@
 
         public void Compute2D()
         {
+            a *= 0.6f;
+            b *= 0.6f;
+            c *= 0.6f;
             if (a == 0.0f) return;
             for (int i = 0; i < 3; i++)
             { 
@@ -24,9 +27,9 @@
                 Evaluator.EvalAndSave2DFunction((x, y) => a * x * y + b * (x + y) + c);
                 Evaluator.EvalAndSave2DFunction((x, y) => a * x * y + b * y + c * x);
 
-                a *= 1.3f;
-                b *= 1.3f;
-                c *= 1.3f;
+                a *= 1.2f;
+                b *= 1.2f;
+                c *= 1.2f;
             }
         }
 

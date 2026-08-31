@@ -19,28 +19,34 @@
 
         public void Compute2D()
         {
+            Alpha *= 3e2f;
+            Beta *= 3e2f;
             for (int i = 0; i < 3; i++)
             {
                 if (Alpha != 0.0f || Beta != 0.0f)
                 {
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cbrt(Alpha * x + Beta * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cbrt(Alpha * x + Beta * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cbrt(Alpha * x * y));
                 }
 
                 if (Alpha != 0.0f)
                 {
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(x + y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(x - y));
                     Evaluator.EvalAndSave2DFunction((x, y) => -Alpha * (float)Math.Cbrt(x + y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => -Alpha * (float)Math.Cbrt(x - y));
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(x * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(x));
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(1.0 - x));
+                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt((1.0 + x) / (1.0 + y)));
                 }
 
                 if (Beta != 0.0f)
                     Evaluator.EvalAndSave2DFunction((x, y) => Beta * (float)Math.Cbrt(y));
 
-                Alpha *= 1.3f;
-                Beta *= 1.3f;
+                Alpha *= 1.5f;
+                Beta *= 1.5f;
             }
         }
 

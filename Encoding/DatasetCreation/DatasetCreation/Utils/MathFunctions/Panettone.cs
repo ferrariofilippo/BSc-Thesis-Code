@@ -22,12 +22,24 @@
                     float term2 = (float)Math.Exp(-1.0f + (x - 1.0f) / mu) * ((1.0f - y) * ((2 - b1 * (1 + x / mu)) * y + (1.0f / mu - sigma) * x * y) - (2 * mu + b2 * (1.0f - 2 * y)) * x);
                     return 10.0f * (term1 + term2);
                 });
+                Evaluator.EvalAndSave2DFunction((float x, float y) =>
+                {
+                    float term1 = (float)Math.Exp(-x) * ((1.0f - y) * ((2 * mu + b1 * (1 - x)) * y + (sigma - mu) * x * y) + (2 * mu + b2 * (1.0f - 2 * y)) * x);
+                    float term2 = (float)Math.Exp(-1.0f + (x - 1.0f) / mu) * ((1.0f - y) * ((2 - b1 * (1 + x / mu)) * y + (1.0f / mu - sigma) * x * y) - (2 * mu + b2 * (1.0f - 2 * y)) * x);
+                    return -10.0f * (term1 + term2);
+                });
 
                 Evaluator.EvalAndSave2DFunction((float x, float y) =>
                 {
                     float term1 = (float)Math.Exp(-y) * (y * (b1 + 2 * mu - 2 * b1 * x + (x - 1) * x * (b2 + mu - sigma)) - (x - 1) * x * (b2 + 2 * mu));
                     float term2 = (float)Math.Exp(-1.0f + (y - 1.0f) / mu) * (-(x * x * ((b2 - 2) * mu + y * (b2 + mu * sigma - 1))) + x * ((b2 - 2) * mu + y * (-2 * b1 * mu + b2 + mu * sigma - 1)) + mu * sigma * (b1 + 2 * mu)) / mu;
                     return 10.0f * (term1 - term2);
+                });
+                Evaluator.EvalAndSave2DFunction((float x, float y) =>
+                {
+                    float term1 = (float)Math.Exp(-y) * (y * (b1 + 2 * mu - 2 * b1 * x + (x - 1) * x * (b2 + mu - sigma)) - (x - 1) * x * (b2 + 2 * mu));
+                    float term2 = (float)Math.Exp(-1.0f + (y - 1.0f) / mu) * (-(x * x * ((b2 - 2) * mu + y * (b2 + mu * sigma - 1))) + x * ((b2 - 2) * mu + y * (-2 * b1 * mu + b2 + mu * sigma - 1)) + mu * sigma * (b1 + 2 * mu)) / mu;
+                    return -10.0f * (term1 - term2);
                 });
 
                 if (mu <= 1e-3f) return;
@@ -42,11 +54,21 @@
                     float part3 = y * (b1 * mu + b1 + 2 * b2 * mu - mu * sigma + 2 * mu + mu * expTerm * (-2 * b2 + mu + sigma - x * (b1 - 2 * b2 - mu + sigma)) - b1 * x - 2 * b2 * mu * x + mu * sigma * x + 1.0f);
                     return factor * (part1 + part2 + part3);
                 });
+                Evaluator.EvalAndSave2DFunction((float x, float y) =>
+                {
+                    float factor = (10.0f / mu) * (float)Math.Exp(-1.0f - x / mu);
+                    float expTerm = (float)Math.Exp(x * (1.0f + 1.0f / mu));
 
-                mu *= 1.3f;
-                sigma *= 1.3f;
-                b1 *= 1.3f;
-                b2 *= 1.3f;
+                    float part1 = -mu * (x - 1) * (b2 + 2 * mu) * (expTerm - 1.0f);
+                    float part2 = y * y * (-b1 * mu - b1 + mu * sigma - 2 * mu - mu * expTerm * (mu + sigma - x * (b1 - mu + sigma)) + b1 * x - mu * sigma * x + x - 1.0f);
+                    float part3 = y * (b1 * mu + b1 + 2 * b2 * mu - mu * sigma + 2 * mu + mu * expTerm * (-2 * b2 + mu + sigma - x * (b1 - 2 * b2 - mu + sigma)) - b1 * x - 2 * b2 * mu * x + mu * sigma * x + 1.0f);
+                    return -factor * (part1 + part2 + part3);
+                });
+
+                mu *= 1.2f;
+                sigma *= 1.2f;
+                b1 *= 1.2f;
+                b2 *= 1.2f;
             }
         }
 

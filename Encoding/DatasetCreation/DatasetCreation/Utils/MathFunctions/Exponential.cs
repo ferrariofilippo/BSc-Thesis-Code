@@ -24,11 +24,14 @@
 
         public void Compute2D()
         {
+            Alpha *= 0.75f;
+            Beta *= 0.75f;
             for (int i = 0; i < 3; i++)
             {
                 Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Beta + x));
                 Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Beta + y));
                 Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Alpha * x * x + y * y));
+                Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Alpha * x * y));
                 if (Alpha != 0.0f || Beta != 0.0f)
                 {
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Alpha * x + Beta * y));
@@ -47,6 +50,8 @@
                     {
                         Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Exp(Beta * x));
                         Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Exp(Beta * y));
+                        Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Exp(Beta * (x + y)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Exp(Beta * x * y));
                         Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Math.Sin(2 * Math.PI * Beta * x) + Math.Sin(2 * Math.PI * Alpha * y)));
                         Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Math.Cos(2 * Math.PI * Alpha * x) + Math.Cos(2 * Math.PI * Beta * y)));
                     }

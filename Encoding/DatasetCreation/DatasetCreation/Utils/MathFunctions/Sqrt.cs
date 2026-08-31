@@ -26,15 +26,20 @@
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Sqrt(x + y));
                     Evaluator.EvalAndSave2DFunction((x, y) => -Alpha * (float)Math.Sqrt(x + y));
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Sqrt(x * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * x * (float)Math.Sqrt(x * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * y * (float)Math.Sqrt(x * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * x * y * (float)Math.Sqrt(x * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Sqrt(x));
-                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Sqrt(1.0 - x));
+                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Sqrt(2.0 - x - y));
                     Evaluator.EvalAndSave2DFunction((x, y) => Beta * (float)Math.Sqrt(y));
                 }
 
                 if (Alpha != 0.0f || Beta != 0.0f)
                 {
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha * x + Beta * y));
-                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha * x + Beta * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha * x * Beta * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha + Beta * x * y));
+
                 }
 
                 Alpha *= 1.3f;
