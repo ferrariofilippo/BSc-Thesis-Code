@@ -19,13 +19,11 @@
 
         public void Compute2D()
         {
-            Alpha *= 3e2f;
-            Beta *= 3e2f;
+            float factor = 1.0f + (float)(Math.PI / 23.0);
             for (int i = 0; i < 3; i++)
             {
                 if (Alpha != 0.0f || Beta != 0.0f)
                 {
-                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cbrt(Alpha * x + Beta * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cbrt(Alpha * x + Beta * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cbrt(Alpha * x * y));
                 }
@@ -38,15 +36,21 @@
                     Evaluator.EvalAndSave2DFunction((x, y) => -Alpha * (float)Math.Cbrt(x - y));
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(x * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(x));
+                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(1.0 - x * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(1.0 - x));
                     Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt((1.0 + x) / (1.0 + y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(2.0 - x - y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Cbrt(1.0 / ((2.0 - y) * (2.0 - x))));
                 }
 
                 if (Beta != 0.0f)
+                {
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cbrt(Alpha * x / Beta * (1.0 + y)));
                     Evaluator.EvalAndSave2DFunction((x, y) => Beta * (float)Math.Cbrt(y));
+                }
 
-                Alpha *= 1.5f;
-                Beta *= 1.5f;
+                Alpha *= factor + RandomNoise.GetRandomNoise();
+                Beta *= factor + RandomNoise.GetRandomNoise();
             }
         }
 
@@ -73,13 +77,13 @@
                     if (j % 2 == 0)
                         stepB *= 10.0f;
 
-                    b += step;
+                    b += stepB;
                 }
 
                 if (i % 2 == 0)
                     stepA *= 10.0f;
 
-                a += step;
+                a += stepA;
                 b = min;
             }
 

@@ -24,6 +24,7 @@
 
         public void Compute2D()
         {
+            float factor = 1.0f + (float)(Math.PI / 33.0);
             Alpha *= 0.75f;
             Beta *= 0.75f;
             for (int i = 0; i < 3; i++)
@@ -31,7 +32,6 @@
                 Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Beta + x));
                 Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Beta + y));
                 Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Alpha * x * x + y * y));
-                Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Alpha * x * y));
                 if (Alpha != 0.0f || Beta != 0.0f)
                 {
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Alpha * x + Beta * y));
@@ -54,15 +54,21 @@
                         Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Exp(Beta * x * y));
                         Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Math.Sin(2 * Math.PI * Beta * x) + Math.Sin(2 * Math.PI * Alpha * y)));
                         Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Math.Cos(2 * Math.PI * Alpha * x) + Math.Cos(2 * Math.PI * Beta * y)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Exp(Beta * (1.0f - x)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Exp(Beta * (1.0f - y)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Exp(Beta * (2.0f - x - y)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => Alpha * (float)Math.Exp(Beta * (1.0f - x) * (1.0f - y)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Math.Sin(2 * Math.PI * Beta / (1.0f + x)) + Math.Sin(2 * Math.PI * Alpha * y)));
+                        Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Exp(Math.Cos(2 * Math.PI * Alpha * x) + Math.Cos(2 * Math.PI * Beta / (1.0f + y))));
                     }
                 }
 
-                Alpha *= 1.2f;
-                Beta *= 1.2f;
+                Alpha *= factor + RandomNoise.GetRandomNoise();
+                Beta *= factor + RandomNoise.GetRandomNoise();
             }
         }
 
-        public static IMathFunction[] GetInstances(int n = 576, float min = 0.0f, float max = 5.0f)
+        public static IMathFunction[] GetInstances(int n = 576, float min = 0.0f, float max = 3.5f)
         {
             int howMany = (int)(Math.Sqrt(n)) / 4 * 4;
             var instances = new IMathFunction[howMany * howMany];

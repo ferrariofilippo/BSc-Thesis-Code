@@ -9,7 +9,7 @@
 
         private float SafeLogInput(float value)
         {
-            return Math.Abs(value) + 0.0001f;
+            return Math.Abs(value) + 0.01f + RandomNoise.GetRandomNoise(0f, 1f);
         }
 
         public void Compute1D()
@@ -35,7 +35,9 @@
 
         public void Compute2D()
         {
-            for (int i = 0; i < 3; i++)
+            float factor = 1.0f + (float)(Math.PI / 30.0);
+
+            for (int i = 0; i < 9; i++)
             {
                 if (a != 0.0f || b != 0.0f || c != 0.0f || d != 0.0f)
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Log(SafeLogInput(a * x + b * y)) + (float)Math.Log10(SafeLogInput(c * x + d * y)));
@@ -50,6 +52,13 @@
                         Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Log(SafeLogInput(a * x)) + b * (float)Math.Log(SafeLogInput(a * y)));
                         Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Log(SafeLogInput(a * x * y)));
                         Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Log(SafeLogInput(a * (float)Math.Sqrt(x * x + y * y))));
+                        Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Log(SafeLogInput(a * (2.8f - x - y))));
+                        Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Log(SafeLogInput(a * (2.0f + x - y))));
+                        Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Log(SafeLogInput(a * (2.0f - x + y))));
+                        Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Log(SafeLogInput(a * (1.0f + x) / (1.0f + y))));
+                        Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Log(SafeLogInput(a * (1.0f + x) / (2.0f - y))));
+                        Evaluator.EvalAndSave2DFunction((x, y) => b * (float)Math.Log(SafeLogInput(a * (1.0f + y) / (2.0f - x))));
+
                     }
 
                     if (c != 0.0f)
@@ -62,10 +71,10 @@
                     }
                 }
 
-                a *= 1.3f;
-                b *= 1.3f;
-                c *= 1.3f;
-                d *= 1.3f;
+                a *= factor + RandomNoise.GetRandomNoise();
+                b *= factor + RandomNoise.GetRandomNoise();
+                c *= factor + RandomNoise.GetRandomNoise();
+                d *= factor + RandomNoise.GetRandomNoise();
             }
         }
 

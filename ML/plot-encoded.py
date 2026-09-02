@@ -247,6 +247,11 @@ def get_targets_1d() -> tuple[Target1D, ...]:
             "f(x) = 1 / (1 + (x - 0.5)^2)",
             lambda x: 1.0 / (1.0 + (x - 0.5) ** 2),
         ),
+        Target1D(
+            "tanh_x_divided_mu",
+            "f(x) = 0.5 * (1 + tanh(x / mu))",
+            lambda x: 0.5 * (1.0 + np.tanh(x / 2.5e-4)),
+        ),
     )
 
 
@@ -280,7 +285,22 @@ def get_targets_2d() -> tuple[Target2D, ...]:
         Target2D(
             "one_over_1_plus_x2_plus_y2",
             "f(x, y) = 1 / (1 + (x - 0.5)^2 + (y - 0.5)^2)",
-            lambda x, y: 1.0 / (1.0 + (x - 0.5) ** 2 + (y - 0.5) ** 2),
+            lambda x, y: 1.0 / (1.0 + (x - 0.5) ** 2 + (y - 0.5) ** 2.0),
+        ),
+        Target2D(
+            "boundary_layer_solution",
+            "f(x, y) = boundary layer test case solution",
+            lambda x, y: 10.0 * np.multiply(np.multiply(np.multiply(x, y), 1.0 - y), np.exp(-x) - np.exp(-1.0 + (x - 1.0) / 5e-2)),
+        ),
+        Target2D(
+            "strange",
+            "f(x, y) = exp(-3(y - 0.5)^2 + (3x - 3) / 2)",
+            lambda x, y: np.exp(-3.0 * (y - 0.5)**2 + (x - 1.0) * 1.5),
+        ),
+        Target2D(
+            "sin(pix)sin(piy)",
+            "f(x, y) = sin(pi x)sin(pi y)",
+            lambda x, y: np.multiply(np.sin(np.pi * x), np.sin(np.pi * y)),
         ),
     )
 
@@ -292,38 +312,38 @@ def main() -> None:
     output_directory = Path(config.output_dir)
     output_directory.mkdir(parents=True, exist_ok=True)
 
-    # encoder_1d = Encoder1D()
+    encoder_1d = Encoder1D()
     encoder_2d = Encoder2D()
     generated_files: list[Path] = []
 
-    # x_plot = np.linspace(0.0, 1.0, config.n_plot_1d, endpoint=True)
-    # for index, target in enumerate(get_targets_1d(), start=1):
-    #     actual = _real_finite(target.function(x_plot), x_plot.shape, target.label)
-    #     exact_coefficients = encoder_1d.get_chebyshev_coefficients(target.function)
-    #     predicted_coefficients = encoder_1d.get_reconstructed(target.function)
-    #     exact_transform = evaluate_chebyshev_1d(x_plot, exact_coefficients)
-    #     autoencoder_prediction = evaluate_chebyshev_1d(
-    #         x_plot, predicted_coefficients
-    #     )
+    x_plot = np.linspace(0.0, 1.0, config.n_plot_1d, endpoint=True)
+    for index, target in enumerate(get_targets_1d(), start=1):
+        actual = _real_finite(target.function(x_plot), x_plot.shape, target.label)
+        exact_coefficients = encoder_1d.get_chebyshev_coefficients(target.function)
+        predicted_coefficients = encoder_1d.get_reconstructed(target.function)
+        exact_transform = evaluate_chebyshev_1d(x_plot, exact_coefficients)
+        autoencoder_prediction = evaluate_chebyshev_1d(
+            x_plot, predicted_coefficients
+        )
 
-    #     print_error_metrics(
-    #         "1D",
-    #         target.label,
-    #         actual,
-    #         exact_transform,
-    #         autoencoder_prediction,
-    #     )
-    #     output_path = output_directory / f"plot_1d_{index:02d}_{target.slug}.png"
-    #     plot_1d_comparison(
-    #         target.label,
-    #         x_plot,
-    #         actual,
-    #         exact_transform,
-    #         autoencoder_prediction,
-    #         output_path,
-    #         config.figure_dpi,
-    #     )
-    #     generated_files.append(output_path)
+        print_error_metrics(
+            "1D",
+            target.label,
+            actual,
+            exact_transform,
+            autoencoder_prediction,
+        )
+        output_path = output_directory / f"plot_1d_{index:02d}_{target.slug}.png"
+        plot_1d_comparison(
+            target.label,
+            x_plot,
+            actual,
+            exact_transform,
+            autoencoder_prediction,
+            output_path,
+            config.figure_dpi,
+        )
+        generated_files.append(output_path)
 
     grid = np.linspace(0.0, 1.0, config.n_plot_2d, endpoint=True)
     x_mesh, y_mesh = np.meshgrid(grid, grid, indexing="ij")

@@ -19,6 +19,7 @@
 
         public void Compute2D()
         {
+            float factor = 1.0f + (float)(Math.PI / 10.0);
             for (int i = 0; i < 3; i++)
             {
                 if (Alpha != 0.0f)
@@ -39,11 +40,15 @@
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha * x + Beta * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha * x * Beta * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha + Beta * x * y));
-
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha + Beta / (1.0f + x + y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha + Beta / (2.0f + x - y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha + Beta / (3.0f - x - y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha * (1.0f - x) + Beta / (1.0f + y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sqrt(Alpha * (1.0f - y) + Beta / (1.0f + x)));
                 }
 
-                Alpha *= 1.3f;
-                Beta *= 1.3f;
+                Alpha *= factor + RandomNoise.GetRandomNoise();
+                Beta *= factor + RandomNoise.GetRandomNoise();
             }
         }
 

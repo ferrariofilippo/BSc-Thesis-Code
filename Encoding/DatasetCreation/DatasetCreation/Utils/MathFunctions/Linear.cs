@@ -14,15 +14,15 @@
         public void Compute2D()
         {
             if (m == 0.0) return;
+            float factor = 1.0f + (float)(Math.PI / 10.0);
             for (int i = 0; i < 3; i++)
             {
                 Evaluator.EvalAndSave2DFunction((x, y) => m * x + q);
                 Evaluator.EvalAndSave2DFunction((x, y) => m * x + q * y);
                 Evaluator.EvalAndSave2DFunction((x, y) => m * y + q);
-                Evaluator.EvalAndSave2DFunction((x, y) => m * y + x + q);
                 Evaluator.EvalAndSave2DFunction((x, y) => m * y + m * x + q);
-                m *= 1.3f;
-                q *= 1.3f;
+                m *= factor + RandomNoise.GetRandomNoise();
+                q *= factor + RandomNoise.GetRandomNoise();
             }
         }
 

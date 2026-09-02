@@ -6,7 +6,7 @@
         public float b { get; set; }
         public float c { get; set; }
 
-        private static Func<float, float> safeTan = (val) => (float)Math.Tan(Math.Max(Math.Min(((val * 1000) % 1570) / 1000.0, Math.PI / 2 - 0.0005), -Math.PI / 2 + 0.0005));
+        private static Func<float, float> safeTan = (val) => (float)Math.Tan(Math.PI * 0.49 * Math.Tanh(val));
 
         public void Compute1D()
         {
@@ -72,6 +72,8 @@
 
         public void Compute2D()
         {
+            float factor = 1.0f + (float)(Math.PI / 10.0);
+
             for (int i = 0; i < 3; i++)
             {
                 if (a != 0.0f && b != 0.0f)
@@ -110,13 +112,13 @@
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sin(16 * Math.PI * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cos(16 * Math.PI * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sin(4 * Math.PI * x) * (float)Math.Sin(2 * Math.PI * y));
-                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cos(4 * Math.PI * y) * (float)Math.Cos(16 * Math.PI * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cos(4 * Math.PI * x) * (float)Math.Cos(16 * Math.PI * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sin(16 * Math.PI * x) * (float)Math.Cos(2 * Math.PI * y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cos(16 * Math.PI * x) * (float)Math.Sin(4 * Math.PI * y));
-                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sin(128 * Math.PI * y));
-                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cos(128 * Math.PI * y));
-                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sin(128 * Math.PI * x) * (float)Math.Sin(16 * Math.PI * y));
-                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cos(4 * Math.PI * y) * (float)Math.Cos(128 * Math.PI * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sin(8 * Math.PI * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cos(8 * Math.PI * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sin(8 * Math.PI * x) * (float)Math.Sin(16 * Math.PI * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Cos(4 * Math.PI * x) * (float)Math.Cos(8 * Math.PI * y));
                 }
 
                 if (b != 0.0f && c != 0.0f)
@@ -131,11 +133,25 @@
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sin(a * x + b * y) + (float)Math.Cos(c * x + y));
                     Evaluator.EvalAndSave2DFunction((x, y) => (float)Math.Sin(a * x - b * y) * (float)Math.Cos(c * y - x));
                     Evaluator.EvalAndSave2DFunction((x, y) => a + b * safeTan(c * x) + b * safeTan(c * y));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Sin(c * Math.PI * (x + y) / (3.0f - x - y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Sin(c * Math.PI * (x - y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Sin(-c * Math.PI * (x + y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Sin(c * Math.PI * (-x + y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Cos(c * Math.PI * (x + y) / (3.0f - x - y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Cos(c * Math.PI * (x - y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Cos(-c * Math.PI * (x + y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Cos(c * Math.PI * (-x + y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Sin(c * Math.PI / (1.0f + x + y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Cos(c * Math.PI / (1.0f + x + y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Sin(c * Math.PI / (2.0f + x - y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Cos(c * Math.PI / (2.0f + x - y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Cos(c * Math.Exp(x - y)));
+                    Evaluator.EvalAndSave2DFunction((x, y) => a + b * (float)Math.Cos(-c * Math.Exp(x + y)));
                 }
 
-                a *= 1.3f;
-                b *= 1.3f;
-                c *= 1.3f;
+                a *= factor + RandomNoise.GetRandomNoise();
+                b *= factor + RandomNoise.GetRandomNoise();
+                c *= factor + RandomNoise.GetRandomNoise();
             }
         }
 

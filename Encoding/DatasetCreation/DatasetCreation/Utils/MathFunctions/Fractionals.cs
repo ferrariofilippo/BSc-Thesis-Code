@@ -17,23 +17,32 @@
         {
             if (a <= 0.0f) return;
             float b = a * 5.0f;
+            float factor = 1.0f + (float)Math.PI;
+
             for (int i = 0; i < 3; i++)
             {
+                Evaluator.EvalAndSave2DFunction((x, y) => (1.0f + b) / (1.0f + x + y));
                 Evaluator.EvalAndSave2DFunction((x, y) => (1.0f + a) / (1.0f + x + y));
                 Evaluator.EvalAndSave2DFunction((x, y) => (1.0f + a) / (1.0f + x * x + y * y));
-                Evaluator.EvalAndSave2DFunction((x, y) => 1f * (1.0f + a) / (3.0f - x - y));
+                Evaluator.EvalAndSave2DFunction((x, y) => (1.0f + a) / (3.0f - x - y));
                 Evaluator.EvalAndSave2DFunction((x, y) => 1f / (1.0f + b * (x + y)));
-                Evaluator.EvalAndSave2DFunction((x, y) => 1f / (1.0f + b + x - y));
-                Evaluator.EvalAndSave2DFunction((x, y) => 1f / (1.0f + b + (x - y)));
+                Evaluator.EvalAndSave2DFunction((x, y) => 1f / (1.2f + b + x - y));
+                Evaluator.EvalAndSave2DFunction((x, y) => 1f / (1.2f + b - (x - y)));
+                Evaluator.EvalAndSave2DFunction((x, y) => 1f / (3.0f + b - x + y));
+                Evaluator.EvalAndSave2DFunction((x, y) => 1f / (3.0f + b + (x - y)));
 
+                Evaluator.EvalAndSave2DFunction((x, y) => -(1.0f + b) / (1.0f + x + y));
                 Evaluator.EvalAndSave2DFunction((x, y) => -(1.0f + a) / (1.0f + x + y));
                 Evaluator.EvalAndSave2DFunction((x, y) => -(1.0f + a) / (1.0f + x * x + y * y));
-                Evaluator.EvalAndSave2DFunction((x, y) => -1f * (1.0f + a) / (3.0f - x - y));
+                Evaluator.EvalAndSave2DFunction((x, y) => -(1.0f + a) / (3.0f - x - y));
                 Evaluator.EvalAndSave2DFunction((x, y) => -1f / (1.0f + b * (x + y)));
-                Evaluator.EvalAndSave2DFunction((x, y) => -1f / (1.0f + b + x - y));
-                Evaluator.EvalAndSave2DFunction((x, y) => -1f / (1.0f + b + (x - y)));
+                Evaluator.EvalAndSave2DFunction((x, y) => -1f / (1.2f + b + x - y));
+                Evaluator.EvalAndSave2DFunction((x, y) => -1f / (1.2f + b - (x - y)));
+                Evaluator.EvalAndSave2DFunction((x, y) => -1f / (3.0f + b - x + y));
+                Evaluator.EvalAndSave2DFunction((x, y) => -1f / (3.0f + b + (x - y)));
 
-                a *= 5.0f;
+                a *= factor + RandomNoise.GetRandomNoise(-1.0f, 1.0f);
+                b = a * 5.0f;
             }
         }
 

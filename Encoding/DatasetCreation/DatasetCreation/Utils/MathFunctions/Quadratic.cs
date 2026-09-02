@@ -14,6 +14,8 @@
 
         public void Compute2D()
         {
+            float factor = 1.0f + (float)(Math.PI / 17.0);
+
             a *= 0.6f;
             b *= 0.6f;
             c *= 0.6f;
@@ -21,15 +23,17 @@
             for (int i = 0; i < 3; i++)
             { 
                 Evaluator.EvalAndSave2DFunction((x, y) => a * x * x + b * x + c);
+                Evaluator.EvalAndSave2DFunction((x, y) => a * y * y + b * y + c);
                 Evaluator.EvalAndSave2DFunction((x, y) => a * x * x + c);
                 Evaluator.EvalAndSave2DFunction((x, y) => a * y * y + b);
+                Evaluator.EvalAndSave2DFunction((x, y) => a * x * y + b);
                 Evaluator.EvalAndSave2DFunction((x, y) => a * y * y + b * x + c);
                 Evaluator.EvalAndSave2DFunction((x, y) => a * x * y + b * (x + y) + c);
                 Evaluator.EvalAndSave2DFunction((x, y) => a * x * y + b * y + c * x);
 
-                a *= 1.2f;
-                b *= 1.2f;
-                c *= 1.2f;
+                a *= factor + RandomNoise.GetRandomNoise();
+                b *= factor + RandomNoise.GetRandomNoise();
+                c *= factor + RandomNoise.GetRandomNoise();
             }
         }
 

@@ -92,7 +92,7 @@ def main(cfg: DictConfig) -> float:
     loss_fn = nn.MSELoss()
     optimizer = build_optimizer(cfg, model)
 
-    scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=100, gamma=0.5)
+    scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=250, gamma=0.8)
 
     best_val = float("inf")
     patience_counter = 0

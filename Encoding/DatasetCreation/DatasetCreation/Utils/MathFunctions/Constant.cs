@@ -16,15 +16,16 @@
 
         public void Compute2D()
         {
+            float factor = 1.0f + (float)(Math.PI / 10.0);
             for (int i = 0; i < 6; i++)
             {
                 Evaluator.EvalAndSave2DFunction((x, y) => Magnitude);
 
-                Magnitude *= 1.1f;
+                Magnitude *= factor + RandomNoise.GetRandomNoise();
             }
         }
 
-        public static IMathFunction[] GetInstances(int n = 2700, float min = 0.0f, float max = 1.5e1f)
+        public static IMathFunction[] GetInstances(int n = 2000, float min = 0.0f, float max = 1.5e1f)
         {
             n = n / 2 * 2;
             var offset = 0;

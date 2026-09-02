@@ -263,6 +263,11 @@ def get_targets() -> tuple[Target1D, ...]:
             "f(x) = 1 / (1 + (x - 0.5)^2)",
             lambda x: 1.0 / (1.0 + (x - 0.5) ** 2),
         ),
+        Target1D(
+            "tanh_x_divided_mu",
+            "f(x) = 0.5 * (1 + tanh(x / mu))",
+            lambda x: 0.5 * (1.0 + np.tanh(x / 2.5e-4)),
+        ),
     )
 
 

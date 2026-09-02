@@ -12,7 +12,7 @@ void CreateDataset()
         () => Sqrt.GetInstances(),
         () => Cbrt.GetInstances(),
         () => Arrow.GetInstances(),
-        () => Panettone.GetInstances(),
+        () => BoundaryLayerForcingTerm.GetInstances(),
         () => Exponential.GetInstances(),
         () => TanhBC.GetInstances(),
         () => Logarithm.GetInstances(),
@@ -39,7 +39,7 @@ void CreateDataset()
 void GetNormalizationFactors()
 {
     Console.WriteLine("---Initializing Normalization Factors---");
-    NormalizationUtil.Compute1DNormalizationFactors();
+    //NormalizationUtil.Compute1DNormalizationFactors();
     Console.WriteLine("---Finished 1D Normalization Factors---");
     Console.WriteLine("---Initializing 2D Normalization Factors---");
     NormalizationUtil.Compute2DNormalizationFactors();
