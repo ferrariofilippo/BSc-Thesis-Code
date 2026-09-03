@@ -89,7 +89,7 @@ class IMLEngine:
         return train_arr, val_arr
 
     def _build_dataloaders(self, cfg, seed: int):
-        self.STANDARDIZATIONS_PATH = f"./data/standardization_{seed}.npz"
+        self.STANDARDIZATIONS_PATH = f"./data/standardization.npz"
         train_arr, val_arr = self._get_data_splits(seed, cfg.val_split)
 
         # Load existing normalization stats or create them

@@ -31,7 +31,7 @@ PROBLEM_CONFIG: dict[str, tuple[str, float]] = {
 }
 
 ALPHA = 1e-1
-DESIRED_ERROR = 1e-5
+DESIRED_ERROR = 1e-3
 
 # Which PROBLEM_CONFIG entries are 2D functions vs 1D boundary functions
 # (1D ones also need their border index, 1-4).

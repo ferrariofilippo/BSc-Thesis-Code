@@ -88,6 +88,7 @@ class NeuralNetwork(IMLEngine):
         loss_fn = nn.MSELoss()
         optimizer = self._build_optimizer(cfg, model)
 
+        train_at_best_val = float("inf")
         best_val = float("inf")
         patience_counter = 0
         ckpt_path = os.path.join(run_dir, "best_model.pt")
@@ -107,6 +108,7 @@ class NeuralNetwork(IMLEngine):
 
             if val_loss < best_val:
                 best_val = val_loss
+                train_at_best_val = train_loss
                 patience_counter = 0
                 torch.save(
                     {
@@ -131,6 +133,6 @@ class NeuralNetwork(IMLEngine):
         with open(cfg_save_path, "w") as f:
             OmegaConf.save(config=cfg, f=f, resolve=True)
 
-        log.info(f"Done. Best val_loss={best_val:.6f}. Checkpoint: {ckpt_path}")
+        log.info(f"Done. Best val_loss={best_val:.6f} train_loss={train_at_best_val:.6f}. Checkpoint: {ckpt_path}")
 
         return best_val

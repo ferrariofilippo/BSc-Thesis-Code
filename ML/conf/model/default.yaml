@@ -35,7 +35,7 @@ length_scale: 1.0
 length_scale_bounds: [5e-1, 1e2]
 
 noise_level: 1.0
-noise_level_bounds: [1e-1, 1e1]
+noise_level_bounds: [1e-5, 1e1]
 
 n_restarts_optimizer: 10
 

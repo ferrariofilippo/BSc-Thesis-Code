@@ -4,5 +4,5 @@ weight_decay: 0.0001
 
 optimizer: adamw
 
-early_stopping_patience: 150
+early_stopping_patience: 2000
 log_every: 50
