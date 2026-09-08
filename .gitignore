@@ -4,3 +4,4 @@ info.md
 .claude/
 *.ps1
 **/__pycache__/*
+utils/thesis-plots/

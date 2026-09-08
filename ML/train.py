@@ -8,7 +8,7 @@ from src.predict.rf import RandomForest
 from src.predict.gp import GaussianProcess
 from src.predict.rsm import ResponseSurfaceMethod
 
-MODEL_NAME = "nn"  # One of the below
+MODEL_NAME = "dt"  # One of the below
 
 MODEL_REGISTRY = {
     "nn": NeuralNetwork,

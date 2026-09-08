@@ -9,9 +9,8 @@ output_dim: 1
 # relu | leaky_relu | gelu | tanh
 hidden_activation: relu
 
-# none | sigmoid | tanh
-# Use "none" (linear) if data is standardized (recommended default).
-# Use "sigmoid" only if your raw inputs are scaled to [0, 1] and standardize=false.
+# Log-tolerance regression requires a linear output. The prediction is converted
+# back with 10**log_tolerance, which guarantees a positive tolerance.
 output_activation: none
 
 ################################################################################

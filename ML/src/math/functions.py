@@ -24,10 +24,7 @@ class UnknownFunctionError(ValueError):
 class ParametersNotSetError(RuntimeError):
     """Raised when a function is requested before update_params() has been called."""
 
-class Functions:
-    # Width of the smoothing bump used by the "freccia" manufactured solutions.
-    _BUMP_WIDTH = 0.01
-    
+class Functions:    
     # Step size used for the finite-difference approximation of derivatives.
     _FD_STEP = 1e-4
 
@@ -174,7 +171,7 @@ class Functions:
     # "Freccia" manufactured solutions (mirror images of one another)
     # ------------------------------------------------------------------ #
     def _freccia_bump(self) -> TwoDFunction:
-        m = self._BUMP_WIDTH
+        m = self.params["alpha"]
         c = exp(-1.0 / m) / (1.0 - exp(-1.0 / m))
 
         def alpha(x: float, y: float) -> float:

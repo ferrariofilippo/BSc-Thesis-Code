@@ -1,5 +1,4 @@
 from sklearn.ensemble import RandomForestRegressor 
-from sklearn.metrics import mean_squared_error
 import joblib
 import os 
 import logging
@@ -20,24 +19,16 @@ class RandomForest(IMLEngine):
         return data[:, 1:], data[:, 0]
     
     def predict(self, inputs) -> float:
-        self._load_standardizations()
-        model = joblib.load(self.PREDICTION_MODEL_PATH)
-
-        stdized = (inputs - self.means[1:]) / self.stds[1:]
-        predicted = model.predict(stdized.reshape(1, -1))[0]
-
-        return predicted * self.stds[0] + self.means[0]
+        model, preprocessing = self._load_regression_checkpoint(self.PREDICTION_MODEL_PATH)
+        standardized = self._standardize_prediction_inputs(inputs, preprocessing)
+        predicted = model.predict(standardized.reshape(1, -1))[0]
+        return self._inverse_standardized_log_target(predicted, preprocessing)
     
     def train(self, cfg: DictConfig) -> float:
         run_dir = HydraConfig.get().runtime.output_dir
-        train_arr, val_arr = self._get_data_splits(cfg.seed, cfg.data.val_split)
-
-        means = train_arr.mean(axis=0)
-        stds = train_arr.std(axis=0)
-        stds[stds==0] = 1.0
-
-        train_arr = (train_arr - means) / stds
-        val_arr = (val_arr - means) / stds
+        train_arr, val_arr, preprocessing = self._prepare_standardized_splits(
+            cfg.seed, cfg.data.val_split
+        )
 
         X_train, y_train = self._split_features_from_target(train_arr)
         X_val, y_val = self._split_features_from_target(val_arr)
@@ -55,18 +46,28 @@ class RandomForest(IMLEngine):
         model.fit(X_train, y_train)
 
         train_pred = model.predict(X_train)
-        train_loss = mean_squared_error(y_train, train_pred)
+        train_loss = self._regression_loss(
+            y_train, train_pred, cfg.training.loss, cfg.training.huber_beta
+        )
 
         val_pred = model.predict(X_val)
-        val_loss = mean_squared_error(y_val, val_pred)
+        val_loss = self._regression_loss(
+            y_val, val_pred, cfg.training.loss, cfg.training.huber_beta
+        )
 
         ckpt_path = os.path.join(run_dir, "best_model.joblib")
-        joblib.dump(model, ckpt_path)
+        joblib.dump({
+            "model": model,
+            "preprocessing": preprocessing,
+            "loss": cfg.training.loss,
+            "huber_beta": cfg.training.huber_beta,
+            "val_loss": val_loss,
+        }, ckpt_path)
 
         log.info(
             f"Done. train_loss={train_loss:.6f}, val_loss={val_loss:.6f}, oob_score={model.oob_score_:.4f}. "
-            f"Model saved: {ckpt_path}"
+            f"metric={cfg.training.loss} on standardized log10(tol); "
+            f"OOB score is R2 in that space. Model saved: {ckpt_path}"
         )
 
         return val_loss
-        

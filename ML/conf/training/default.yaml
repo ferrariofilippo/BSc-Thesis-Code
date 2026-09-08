@@ -1,8 +1,14 @@
 epochs: 2000
 lr: 0.001
-weight_decay: 0.0001
+weight_decay: 0.001
 
 optimizer: adamw
 
-early_stopping_patience: 2000
+# Regression is performed on standardized log10(tolerance). Smooth L1 is less
+# sensitive than MSE to the small number of extreme or inconsistent curves.
+# All estimators report this metric; only the NN optimizes it directly.
+loss: smooth_l1
+huber_beta: 0.5
+
+early_stopping_patience: 400
 log_every: 50

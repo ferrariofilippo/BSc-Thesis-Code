@@ -9,10 +9,10 @@ from src.encode.encoder1d import Encoder1D
 from src.encode.encoder2d import Encoder2D
 from src.math.functions import Functions
 
-IN_PATH = Path("./data/dataset_pre_preprocessing.csv")
-# IN_PATH = Path("./data/final_validation.csv")
-OUT_PATH = Path("./data/preprocessed.csv")
-# OUT_PATH = Path("./data/final_validation_preprocessed.csv")
+# IN_PATH = Path("./data/dataset_pre_preprocessing.csv")
+IN_PATH = Path("./data/final_validation.csv")
+# OUT_PATH = Path("./data/preprocessed.csv")
+OUT_PATH = Path("./data/final_validation_preprocessed.csv")
 
 FIELD_2D_SPECS: Sequence[tuple[str, str, str]] = (
     ("mu_tipo", "mu_intensita", "mu"),

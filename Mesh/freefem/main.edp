@@ -134,12 +134,12 @@ func f10 = tanh(2*(1-y)/muI);
 
 // Forcing term for the Arrow Test Case --- Point of the arrow in (1, 1)
 macro alphaF(x,y) exp(-(y-x)^2/0.01) // EOM
-macro rhoF(z) (z - (exp((z-1)/epsilon) - exp(-1/epsilon)) / (1-exp(-1/epsilon))) // EOM
-macro deltaF(z) (1 - exp(-z/epsilon) + exp(-1/epsilon) - exp(-(1-z)/epsilon)) // EOM
+macro rhoF(z) (z - (exp((z-1)/alpha) - exp(-1/alpha)) / (1-exp(-1/alpha))) // EOM
+macro deltaF(z) (1 - exp(-z/alpha) + exp(-1/alpha) - exp(-(1-z)/alpha)) // EOM
 
 // Forcing term for the Arrow Test Case --- Point of the arrow in (0, 0)
-macro rhoF180(z) (1 - z - (exp(-z/epsilon) - exp(-1/epsilon)) / (1-exp(-1/epsilon))) // EOM
-macro deltaF180(z) (1 - exp(-(1-z)/epsilon) + exp(-1/epsilon) - exp(-z/epsilon)) // EOM
+macro rhoF180(z) (1 - z - (exp(-z/alpha) - exp(-1/alpha)) / (1-exp(-1/alpha))) // EOM
+macro deltaF180(z) (1 - exp(-(1-z)/alpha) + exp(-1/alpha) - exp(-z/alpha)) // EOM
 
 /* ------------------------- ADR Params Definition -------------------------- */
 func mu =
@@ -348,8 +348,10 @@ if (fKind != "Funzione 11" && fKind != "Funzione 15") {
 
             reduction = abs(1.0 * Th.nt - lastNT) / Th.nt;
             lastNT = Th.nt;
-        } else {
+        // } else {
         // } if (it >= 1) {
+        }
+        if (it == 0 || it >= DefaultIterations) {
             savevtk(
                 meshName + "Iteration_" + lastIt + ".vtu",
                 Th, uh, dataname="uh", order=forder
@@ -439,8 +441,10 @@ if (fKind != "Funzione 11" && fKind != "Funzione 15") {
 
             reduction = abs(1.0 * Th.nt - lastNT) / Th.nt;
             lastNT = Th.nt;
-        } else {
+        // } else {
         // } if (it >= 1) {
+        }
+        if (it == 0 || it >= DefaultIterations) {
             savevtk(
                 meshName + "Iteration_" + lastIt + ".vtu",
                 Th, uhP1, dataname="uh", order=forder

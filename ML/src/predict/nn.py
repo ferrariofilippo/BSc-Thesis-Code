@@ -44,32 +44,47 @@ class NeuralNetwork(IMLEngine):
             log.info(f"Sweep job #{0} -> GPU {gpu_id}")
         return torch.device(f"cuda:{gpu_id}")
     
-    def _get_model(self, cfg: DictConfig, device) -> NeuralNetworkModel:
+    def _get_model(self, model_cfg: DictConfig, device) -> NeuralNetworkModel:
+        if model_cfg.output_activation != "none":
+            raise ValueError(
+                "Log-tolerance regression requires model.output_activation=none. "
+                "Positivity is enforced by exponentiating the linear output."
+            )
         return NeuralNetworkModel(
-            input_dim=cfg.model.input_dim,
-            hidden_1_dim=cfg.model.hidden_1_dim,
-            hidden_2_dim=cfg.model.hidden_2_dim,
-            hidden_3_dim=cfg.model.hidden_3_dim,
-            output_dim=cfg.model.output_dim,
-            hidden_activation=cfg.model.hidden_activation,
-            output_activation=cfg.model.output_activation,
+            input_dim=model_cfg.input_dim,
+            hidden_1_dim=model_cfg.hidden_1_dim,
+            hidden_2_dim=model_cfg.hidden_2_dim,
+            hidden_3_dim=model_cfg.hidden_3_dim,
+            output_dim=model_cfg.output_dim,
+            hidden_activation=model_cfg.hidden_activation,
+            output_activation=model_cfg.output_activation,
         ).to(device)
 
     def predict(self, inputs) -> float:
         device = self._pick_device()
         ckpt = torch.load(self.PREDICTION_MODEL_PATH, map_location=device, weights_only=False)
-        self._load_standardizations()
+
+        try:
+            preprocessing = ckpt["preprocessing"]
+        except KeyError as exc:
+            raise ValueError(
+                "Checkpoint does not contain log-space preprocessing statistics. "
+                "Retrain the model with the current pipeline before prediction."
+            ) from exc
+
+        standardized = self._standardize_prediction_inputs(inputs, preprocessing)
 
         self.model = self._get_model(ckpt["model_cfg"], device)
         self.model.load_state_dict(ckpt["model_state"])
         self.model.eval()
 
-        stdized = (inputs - self.means[1:]) / self.stds[1:]
         with torch.no_grad():
-            x = torch.as_tensor(stdized, dtype=torch.float32, device=device) 
-            tol = self.model.forward(x)
+            x = torch.as_tensor(standardized, dtype=torch.float32, device=device)
+            standardized_log_tolerance = self.model.forward(x).item()
 
-        return tol.cpu().numpy()[0] * self.stds[0] + self.means[0]
+        return self._inverse_standardized_log_target(
+            standardized_log_tolerance, preprocessing
+        )
         
     def train(self, cfg: DictConfig) -> float:
         torch.manual_seed(cfg.seed)
@@ -81,11 +96,18 @@ class NeuralNetwork(IMLEngine):
 
         run_dir = HydraConfig.get().runtime.output_dir
 
-        train_loader, val_loader = self._build_dataloaders(cfg.data, cfg.seed)
+        train_loader, val_loader, preprocessing = self._build_dataloaders(
+            cfg.data, cfg.seed
+        )
 
-        model = self._get_model(cfg, device)
+        model = self._get_model(cfg.model, device)
 
-        loss_fn = nn.MSELoss()
+        if cfg.training.loss == "smooth_l1":
+            loss_fn = nn.SmoothL1Loss(beta=cfg.training.huber_beta)
+        elif cfg.training.loss == "mse":
+            loss_fn = nn.MSELoss()
+        else:
+            raise ValueError(f"Unknown loss: {cfg.training.loss}")
         optimizer = self._build_optimizer(cfg, model)
 
         train_at_best_val = float("inf")
@@ -114,6 +136,7 @@ class NeuralNetwork(IMLEngine):
                     {
                         "model_state": model.state_dict(),
                         "model_cfg": cfg.model,
+                        "preprocessing": preprocessing,
                         "epoch": epoch,
                         "val_loss": val_loss,
                     },
