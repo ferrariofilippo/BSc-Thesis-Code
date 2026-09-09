@@ -1,68 +1,119 @@
-//verbosity=0;
-/* Calcola la seminorma H1 della funzione vv sulla mesh Th */
 func real computeEE(
-	mesh & Th,
-	real[int] & vv
+    mesh & Th,
+    real[int] & vv
 ) {
-	include "./freefem/Adaptation/makepatch.idp";
-	
-	fespace Xh0(Th, P0);
-	fespace Xh1(Th, P1);
+    include "./freefem/Adaptation/makepatch.idp";
 
-	Xh0 vol = area; 
-	Xh0 eta2K = 0;
+    fespace Xh0(Th, P0);
+    fespace Xh1(Th, P1);
 
-	Xh1 v;
-	v[] = vv;
+    Xh0 vol = area;
+    Xh0 eta2K = 0;
+    Xh1 v;
+    v[] = vv;
 
-	Xh0 dxv, dyv;
-	dxv = dx(v);
-	dyv = dy(v);
-	
-	int ne = Th.nt;
+    Xh0 dxv = dx(v);
+    Xh0 dyv = dy(v);
 
-	real px, py;
-	real Ex, Ey;
-	real vpatch;
-	real sK;
-	real eps=2.220446049250313e-16;
-	
-	int[int] nextK(ne);
-	real[int] lam1K(ne), lam2K(ne);
+    int ne = Th.nt;
+    int[int] nextK(ne);
+    int[int,int] patch(ne, 1000);
+    nextK = 1;
+    makepatch(patch, nextK, Th);
 
-	int[int,int] patch(ne, 1000);
-	real[int,int] GK(2, 2);
-	real[int,int] r1K(2, ne), r2K(2, ne);
-	real[int,int] M(2, 2); 
-	
-    real[int,int] U(1,1), V(1,1);
-    real[int] sigma(1);
-	nextK = 1;
-	makepatch(patch, nextK, Th);
-
-	// Loop Sui Tetraedri
     for (int k = 0; k < ne; k++) {
-        GK=0;
-        px=0;
-        py=0;
-        vpatch=0;
+        real px = 0.;
+        real py = 0.;
+        real vpatch = 0.;
 
-		// --- Ricostruzione del gradiente come media pesata sull'area ---
-		// Loop sul Patch del k-esimo Tetraedro
-        for(int j = 0; j < nextK(k); j++) {
-            px += dxv[][patch(k, j)] * vol[][patch(k, j)];
-            py += dyv[][patch(k, j)] * vol[][patch(k, j)];
-
-            vpatch += vol[][patch(k, j)];   
+        for (int j = 0; j < nextK(k); j++) {
+            int patchElement = patch(k, j);
+            px += dxv[][patchElement] * vol[][patchElement];
+            py += dyv[][patchElement] * vol[][patchElement];
+            vpatch += vol[][patchElement];
         }
-        
-        px = px / vpatch;
-        py = py / vpatch;
-        
-        Ex = px - dxv[][k];
-        Ey = py - dyv[][k];
-        eta2K[][k] = (Ex*Ex + Ey*Ey) * vol[][k];
+        px /= vpatch;
+        py /= vpatch;
+
+        // |patch_K| cancels the normalization of GK. Accumulate its
+        // unnormalized trace directly; no eigendecomposition is needed.
+        for (int j = 0; j < nextK(k); j++) {
+            int patchElement = patch(k, j);
+            real Ex = px - dxv[][patchElement];
+            real Ey = py - dyv[][patchElement];
+            eta2K[][k] += (Ex * Ex + Ey * Ey) * vol[][patchElement];
+        }
     }
 
     return eta2K[].sum;
 }
+
+// Previous implementation, preserved for restoration.
+// //verbosity=0;
+// /* Calcola la seminorma H1 della funzione vv sulla mesh Th */
+// func real computeEE(
+// 	mesh & Th,
+// 	real[int] & vv
+// ) {
+// 	include "./freefem/Adaptation/makepatch.idp";
+//
+// 	fespace Xh0(Th, P0);
+// 	fespace Xh1(Th, P1);
+//
+// 	Xh0 vol = area;
+// 	Xh0 eta2K = 0;
+//
+// 	Xh1 v;
+// 	v[] = vv;
+//
+// 	Xh0 dxv, dyv;
+// 	dxv = dx(v);
+// 	dyv = dy(v);
+//
+// 	int ne = Th.nt;
+//
+// 	real px, py;
+// 	real Ex, Ey;
+// 	real vpatch;
+// 	real sK;
+// 	real eps=2.220446049250313e-16;
+//
+// 	int[int] nextK(ne);
+// 	real[int] lam1K(ne), lam2K(ne);
+//
+// 	int[int,int] patch(ne, 1000);
+// 	real[int,int] GK(2, 2);
+// 	real[int,int] r1K(2, ne), r2K(2, ne);
+// 	real[int,int] M(2, 2);
+//
+//     real[int,int] U(1,1), V(1,1);
+//     real[int] sigma(1);
+// 	nextK = 1;
+// 	makepatch(patch, nextK, Th);
+//
+// 	// Loop Sui Tetraedri
+//     for (int k = 0; k < ne; k++) {
+//         GK=0;
+//         px=0;
+//         py=0;
+//         vpatch=0;
+//
+// 		// --- Ricostruzione del gradiente come media pesata sull'area ---
+// 		// Loop sul Patch del k-esimo Tetraedro
+//         for(int j = 0; j < nextK(k); j++) {
+//             px += dxv[][patch(k, j)] * vol[][patch(k, j)];
+//             py += dyv[][patch(k, j)] * vol[][patch(k, j)];
+//
+//             vpatch += vol[][patch(k, j)];
+//         }
+//
+//         px = px / vpatch;
+//         py = py / vpatch;
+//
+//         Ex = px - dxv[][k];
+//         Ey = py - dyv[][k];
+//         eta2K[][k] = (Ex*Ex + Ey*Ey) * vol[][k];
+//     }
+//
+//     return eta2K[].sum;
+// }

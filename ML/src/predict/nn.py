@@ -137,6 +137,8 @@ class NeuralNetwork(IMLEngine):
                         "model_state": model.state_dict(),
                         "model_cfg": cfg.model,
                         "preprocessing": preprocessing,
+                        "loss": str(cfg.training.loss),
+                        "huber_beta": float(cfg.training.huber_beta),
                         "epoch": epoch,
                         "val_loss": val_loss,
                     },

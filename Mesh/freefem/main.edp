@@ -371,9 +371,9 @@ if (fKind != "Funzione 11" && fKind != "Funzione 15") {
         Vh2 uh, vh, fh, uhEx;
         
         if (fKind == "Funzione 11") {
-            uhEx = (alphaF(x,y)+rhoF(x)*rhoF(y))*deltaF(x)*deltaF(y);
+            uhEx = fI*(alphaF(x,y)+rhoF(x)*rhoF(y))*deltaF(x)*deltaF(y);
         } else {
-            uhEx = (alphaF(x,y)+rhoF180(x)*rhoF180(y))*deltaF180(x)*deltaF180(y);
+            uhEx = fI*(alphaF(x,y)+rhoF180(x)*rhoF180(y))*deltaF180(x)*deltaF180(y);
         }
 
         fh = -mu(x,y)*(dxx(uhEx)+dyy(uhEx)) + b1(x,y)*dx(uhEx) + b2(x,y)*dy(uhEx) + sigma(x,y)*uhEx;

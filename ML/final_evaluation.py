@@ -10,6 +10,11 @@ New checkpoints contain their own log-space preprocessing statistics. Legacy
 NN raw-scale checkpoints can still use the optional standardization sidecar.
 Invalid rows are preserved with diagnostics and excluded from the applicable
 metrics; their counts are always reported. Missing inputs are never imputed.
+
+Smooth L1 uses z = (log10(tol) - training_mean) / training_std, as in NN
+training. Compare it with standardized_log10_mse, not log10_mse: the latter
+uses unstandardized log10 residuals. At beta=0.5 and with identical scored
+rows, Smooth L1 <= standardized_log10_mse = log10_mse / training_std**2.
 """
 
 from __future__ import annotations
@@ -270,6 +275,9 @@ def load_approach(approach, path, device, standardization, feature_columns,
         "prediction_kind": prediction_kind,
         "training_loss": checkpoint.get("loss", "smooth_l1"),
         "smooth_l1_beta": float(checkpoint.get("huber_beta", fallback_beta)),
+        "smooth_l1_beta_source": "checkpoint" if "huber_beta" in checkpoint else "fallback",
+        "target_log10_mean": float(means[0]) if preprocessing is not None else None,
+        "target_log10_std": float(stds[0]) if preprocessing is not None else None,
         "saved_validation_loss": (
             float(checkpoint["val_loss"]) if checkpoint.get("val_loss") is not None else None
         ),
@@ -394,9 +402,11 @@ def validate_reconstructed_split(training_split, preprocessing):
 
 def short_metrics(metrics):
     keys = (
-        "mse", "log10_mse", "smooth_l1_standardized_log10", "smooth_l1_beta",
+        "mse", "log10_mse", "standardized_log10_mse",
+        "smooth_l1_standardized_log10", "smooth_l1_beta",
         "num_examples", "num_predictions_valid", "num_invalid_predictions",
-        "num_mse_examples", "num_log10_mse_examples", "num_smooth_l1_examples",
+        "num_mse_examples", "num_log10_mse_examples",
+        "num_standardized_log10_mse_examples", "num_smooth_l1_examples",
         "num_rows_with_issues", "status", "error",
     )
     return {key: metrics[key] for key in keys if key in metrics}
@@ -472,6 +482,7 @@ def evaluate_rows(model, features, targets, feature_columns, means, stds,
 
     squared_errors = np.full(count, np.nan, dtype=np.float64)
     squared_log_errors = np.full(count, np.nan, dtype=np.float64)
+    squared_standardized_log_errors = np.full(count, np.nan, dtype=np.float64)
     smooth_l1_errors = np.full(count, np.nan, dtype=np.float64)
     # Legacy negative predictions still have a meaningful raw MSE, but not log MSE.
     raw_mask = target_valid & np.isfinite(predictions)
@@ -484,22 +495,30 @@ def evaluate_rows(model, features, targets, feature_columns, means, stds,
         if preprocessing is not None:
             if not np.isfinite(smooth_l1_beta) or smooth_l1_beta < 0:
                 raise ValueError("smooth_l1_beta must be finite and non-negative.")
-            residual = np.abs(
-                (log_predictions[log_mask] - np.log10(targets[log_mask])) / stds[0]
+            # Score the model's standardized output directly against the target
+            # standardized with the checkpoint's training statistics. Float64
+            # keeps report arithmetic safe; the loss is PyTorch's NN objective.
+            standardized_log_targets = (
+                np.log10(targets[log_mask]) - means[0]
+            ) / stds[0]
+            squared_standardized_log_errors[log_mask] = np.square(
+                scaled_predictions[log_mask] - standardized_log_targets
             )
-            if smooth_l1_beta == 0:
-                smooth_l1_errors[log_mask] = residual
-            else:
-                smooth_l1_errors[log_mask] = np.where(
-                    residual < smooth_l1_beta,
-                    0.5 * np.square(residual) / smooth_l1_beta,
-                    residual - 0.5 * smooth_l1_beta,
-                )
+            smooth_l1_errors[log_mask] = torch.nn.functional.smooth_l1_loss(
+                torch.from_numpy(scaled_predictions[log_mask]),
+                torch.from_numpy(standardized_log_targets),
+                beta=smooth_l1_beta,
+                reduction="none",
+            ).numpy()
     flag(raw_mask & ~np.isfinite(squared_errors), "metric_overflow", "Squared tolerance error exceeded float64 range.")
     flag(log_mask & ~np.isfinite(squared_log_errors), "metric_overflow", "Squared log error exceeded float64 range.")
+    if preprocessing is not None:
+        flag(log_mask & ~np.isfinite(squared_standardized_log_errors), "metric_overflow", "Squared standardized log error exceeded float64 range.")
+        flag(log_mask & ~np.isfinite(smooth_l1_errors), "metric_overflow", "Smooth L1 error exceeded float64 range.")
+    standardized_log_mask = log_mask & np.isfinite(squared_standardized_log_errors)
+    smooth_l1_mask = log_mask & np.isfinite(smooth_l1_errors)
     raw_mask &= np.isfinite(squared_errors)
     log_mask &= np.isfinite(squared_log_errors)
-    smooth_l1_mask = log_mask & np.isfinite(smooth_l1_errors)
 
     issues = [
         {"row_index": int(row), "csv_line": int(row + 2), "status": str(status[row]),
@@ -512,16 +531,21 @@ def evaluate_rows(model, features, targets, feature_columns, means, stds,
         "predicted_log10_tolerance": np.where(np.isfinite(log_predictions), log_predictions, np.nan),
         "squared_error": np.where(raw_mask, squared_errors, np.nan),
         "squared_log10_error": np.where(log_mask, squared_log_errors, np.nan),
+        "squared_standardized_log10_error": np.where(
+            standardized_log_mask, squared_standardized_log_errors, np.nan
+        ),
         "smooth_l1_standardized_log10_error": np.where(
             smooth_l1_mask, smooth_l1_errors, np.nan
         ),
         "mse_included": raw_mask, "log10_mse_included": log_mask,
+        "standardized_log10_mse_included": standardized_log_mask,
         "smooth_l1_included": smooth_l1_mask,
         "status": status, "reason": ["; ".join(items) for items in reasons],
     }
     metrics = {
         "mse": _finite_mean(squared_errors),
         "log10_mse": _finite_mean(squared_log_errors),
+        "standardized_log10_mse": _finite_mean(squared_standardized_log_errors),
         "smooth_l1_standardized_log10": _finite_mean(smooth_l1_errors),
         "smooth_l1_beta": float(smooth_l1_beta),
         "num_examples": count,
@@ -529,6 +553,7 @@ def evaluate_rows(model, features, targets, feature_columns, means, stds,
         "num_invalid_predictions": int((~positive_prediction).sum()),
         "num_mse_examples": int(raw_mask.sum()),
         "num_log10_mse_examples": int(log_mask.sum()),
+        "num_standardized_log10_mse_examples": int(standardized_log_mask.sum()),
         "num_smooth_l1_examples": int(smooth_l1_mask.sum()),
         "num_rows_with_issues": len(issues),
         "status": "complete" if not issues else ("partial" if raw_mask.any() or log_mask.any() else "failed"),
@@ -550,20 +575,23 @@ def failed_evaluation(targets, error):
         **{name: np.full(count, np.nan) for name in (
             "predicted_tolerance", "predicted_log10_tolerance",
             "squared_error", "squared_log10_error",
+            "squared_standardized_log10_error",
             "smooth_l1_standardized_log10_error",
         )},
         "mse_included": np.zeros(count, dtype=bool),
         "log10_mse_included": np.zeros(count, dtype=bool),
+        "standardized_log10_mse_included": np.zeros(count, dtype=bool),
         "smooth_l1_included": np.zeros(count, dtype=bool),
         "status": ["model_error"] * count,
         "reason": [error] * count,
     }
     metrics = {
-        "mse": None, "log10_mse": None,
+        "mse": None, "log10_mse": None, "standardized_log10_mse": None,
         "smooth_l1_standardized_log10": None,
         "num_examples": count, "num_predictions_valid": 0,
         "num_invalid_predictions": count, "num_mse_examples": 0,
         "num_log10_mse_examples": 0, "num_smooth_l1_examples": 0,
+        "num_standardized_log10_mse_examples": 0,
         "num_rows_with_issues": count,
         "status": "failed", "error": error,
     }
@@ -628,7 +656,8 @@ def main() -> int:
             metadata["split_check"] = split_check
             saved_loss = metadata.get("saved_validation_loss")
             saved_loss_comparable = (
-                metadata["training_loss"] == "smooth_l1"
+                preprocessing is not None
+                and metadata["training_loss"] == "smooth_l1"
                 and not (approach == "gp" and args.gp_point_estimate == "mean")
             )
             metadata["saved_validation_loss_comparable"] = saved_loss_comparable
@@ -675,9 +704,16 @@ def main() -> int:
         "status": overall_status,
         "metric_definitions": {
             "mse": "Mean squared error in original tolerance units.",
-            "log10_mse": "Mean squared difference between log10(predicted tolerance) and log10(true tolerance).",
+            "log10_mse": "Mean squared difference between unstandardized log10(predicted tolerance) and log10(true tolerance).",
+            "standardized_log10_mse": (
+                "Mean squared residual on z = (log10(tolerance) - target_log10_mean) / target_log10_std, "
+                "using the checkpoint's training statistics. Equals log10_mse / target_log10_std**2 "
+                "when scored rows match."
+            ),
             "smooth_l1_standardized_log10": (
-                "Smooth L1 on the standardized log10 tolerance, exactly matching the training loss."
+                "Mean PyTorch Smooth L1 on standardized log10 tolerance z, with smooth_l1_beta. "
+                "Matches the NN objective, with float64 report arithmetic. At beta=0.5 it is <= "
+                "standardized_log10_mse on the same rows; this bound does not apply to log10_mse."
             ),
         },
         "metric_scope": (
@@ -707,7 +743,8 @@ def main() -> int:
             values = []
             for key, title in (
                 ("mse", "MSE"), ("log10_mse", "log10 MSE"),
-                ("smooth_l1_standardized_log10", "Smooth L1"),
+                ("standardized_log10_mse", "standardized log10 MSE"),
+                ("smooth_l1_standardized_log10", "Smooth L1 (standardized log10)"),
             ):
                 value = split_metrics.get(key)
                 values.append(f"{title}={value:.10g}" if value is not None else f"{title}=unavailable")

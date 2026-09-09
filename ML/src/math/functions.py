@@ -107,7 +107,7 @@ class Functions:
 
             left = exp(-x) * (
                 (1.0 - y) * ((2.0 * mu + b1 * (1.0 - x)) * y + (sigma - mu) * x * y)
-                + (1.0 + mu + b2 * (1.0 - 2.0 * y)) * x
+                + (2.0 * mu + b2 * (1.0 - 2.0 * y)) * x
             )
             right = exp(-1.0 + (x - 1.0) / alpha) * (
                 (1.0 - y) * ((2.0 * mu / alpha - b1 * (1.0 + x / alpha)) * y
@@ -175,7 +175,7 @@ class Functions:
         c = exp(-1.0 / m) / (1.0 - exp(-1.0 / m))
 
         def alpha(x: float, y: float) -> float:
-            return exp(-((y - x) ** 2) / m)
+            return exp(-((y - x) ** 2) / 0.01)
 
         def rho(z: float) -> float:
             return z - (exp((z - 1.0) / m) - c)

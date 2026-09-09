@@ -1,316 +1,316 @@
 mu_tipo,mu_intensita,b_tipo_1,b_intensita_1,b_tipo_2,b_Intensita_2,sigma_tipo,sigma_intensita,forzante_tipo,forzante_intensita,L1_bc_fun,L1_bc_intensita,L2_bc_fun,L2_bc_intensita,L3_bc_fun,L3_bc_intensita,L4_bc_fun,L4_bc_intensita,toll,alpha,err_fin
-Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,3.78E-02,3.50248E-04
-Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,3.78E-02,6.56199E-04
-Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,3.78E-02,1.08333E-03
-Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.7,3.78E-02,2.44717E-03
-Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,3.78E-02,5.89668E-03
-Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.25,1.89E-03,1.92453E+00
-Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,1.89E-03,1.92858E+00
-Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.89E-03,1.91485E+00
-Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,10,1.89E-03,2.03911E+00
-Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,50,1.89E-03,2.46932E+00
-Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.1,5.00E-01,4.09103E-05
-Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.2,5.00E-01,1.70626E-04
-Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,5.00E-01,4.00267E-04
-Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,5.00E-01,7.06851E-04
-Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,5.00E-01,1.28836E-03
-Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,6.00E-03,1.94358E-01
-Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,2,6.00E-03,1.94906E-01
-Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,4,6.00E-03,2.20344E-01
-Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,6,6.00E-03,2.99139E-01
-Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,8,6.00E-03,5.46144E-01
-Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.1,7.39E-02,3.65971E-05
-Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.2,7.39E-02,1.66025E-04
-Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,7.39E-02,4.33121E-04
-Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,7.39E-02,1.53105E-03
-Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,1,7.39E-02,9.16073E-03
-Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.34E-02,5.85719E-03
-Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,2,1.34E-02,2.93219E-02
-Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.34E-02,8.24915E-02
-Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,4,1.34E-02,1.79608E-01
-Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.34E-02,3.32001E-01
-Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,7.39E-02,3.48318E-04
-Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,7.39E-02,6.81503E-04
-Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,7.39E-02,1.13157E-03
-Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,7.39E-02,3.09991E-03
-Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,7.39E-02,1.89581E-02
-Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,3.78E-02,3.51088E-04
-Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,3.78E-02,1.07669E-03
-Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,3.78E-02,2.85490E-03
-Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,3.78E-02,5.82536E-03
-Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,3.78E-02,1.61139E-02
-Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.25,1.89E-03,2.00002E+00
-Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,1.89E-03,1.99805E+00
-Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.89E-03,2.00763E+00
-Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.89E-03,1.91293E+00
-Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,15,1.89E-03,3.36339E+00
-Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,4.26E-03,1.50304E-01
-Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,2,4.26E-03,1.54828E-01
-Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,3,4.26E-03,1.62393E-01
-Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,4,4.26E-03,1.77281E-01
-Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,4.26E-03,2.36494E-01
-Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,2.21E-01,4.18869E-04
-Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,2.21E-01,6.88415E-04
-Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,2.21E-01,1.14299E-03
-Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.6,2.21E-01,1.89291E-03
-Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,2.21E-01,3.18018E-03
-Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.35,8.90E-02,4.60467E-04
-Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,8.90E-02,6.10039E-04
-Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,8.90E-02,1.02588E-03
-Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.7,8.90E-02,2.21778E-03
-Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,1,8.90E-02,4.93272E-03
-Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.35,8.69E-04,2.31832E+01
-Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,8.69E-04,2.27787E+01
-Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,8.69E-04,2.20619E+01
-Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,3,8.69E-04,2.15361E+01
-Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,8.69E-04,2.05955E+01
-Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.12E-02,7.82519E-03
-Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,2,1.12E-02,2.68007E-02
-Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.12E-02,7.61602E-02
-Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,4,1.12E-02,1.64710E-01
-Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.12E-02,3.20641E-01
-Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,5.00E-02,3.51203E-04
-Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,5.00E-02,1.09060E-03
-Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,5.00E-02,2.83660E-03
-Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,5.00E-02,5.83664E-03
-Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,5.00E-02,1.68463E-02
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,4.91E-02,3.48396E-04
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,4.91E-02,1.19848E-03
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,4.91E-02,3.46496E-03
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1,4.91E-02,6.62893E-03
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,4.91E-02,2.11422E-02
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,4.91E-02,3.64986E-04
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,4.91E-02,1.19519E-03
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,4.91E-02,3.30890E-03
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1,4.91E-02,6.88493E-03
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,4.91E-02,1.99580E-02
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,4.91E-02,1.19620E-03
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,4.91E-02,3.20390E-03
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1,4.91E-02,6.62847E-03
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1.25,4.91E-02,1.18580E-02
-Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,4.91E-02,1.91334E-02
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,1.00E-03,1.20703E+01
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-03,1.20925E+01
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-03,1.17341E+01
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,10,1.00E-03,1.03370E+01
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,20,1.00E-03,8.34896E+00
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,2.53140E-02
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,7.12180E-02
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.69773E-01
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,6.17507E-01
-Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,8.11596E-01
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,1,1.00E-02,2.37747E-02
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,3,1.00E-02,6.79829E-02
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,5,1.00E-02,2.57574E-01
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,7,1.00E-02,6.25765E-01
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,9,1.00E-02,7.57331E-01
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,1,1.00E-02,2.51700E-02
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,3,1.00E-02,6.98603E-02
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,5,1.00E-02,2.61369E-01
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,7,1.00E-02,5.42867E-01
-Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,9,1.00E-02,8.46205E-01
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,2.53304E-02
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,6.98091E-02
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.52556E-01
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,4.17748E-01
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,7.97673E-01
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,2.48884E-02
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,6.97498E-02
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.72397E-01
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,6.58222E-01
-Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,8.26612E-01
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-03,1.19928E+01
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-03,1.21184E+01
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-03,1.18710E+01
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-03,1.12925E+01
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-03,1.09680E+01
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,2.53380E-02
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,7.06044E-02
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.71239E-01
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,5.94421E-01
-Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,8.29778E-01
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,1,1.00E-02,2.52983E-02
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,3,1.00E-02,7.01120E-02
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,5,1.00E-02,2.61061E-01
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,7,1.00E-02,6.36914E-01
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,9,1.00E-02,1.12631E+00
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,1,1.00E-02,2.53725E-02
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,3,1.00E-02,7.01240E-02
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,5,1.00E-02,2.66574E-01
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,7,1.00E-02,6.89513E-01
-Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,9,1.00E-02,1.28547E+00
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,2.40277E-02
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,6.92622E-02
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.60315E-01
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,6.22664E-01
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,8.17368E-01
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,1,5.00E-03,2.01168E-01
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,3,5.00E-03,2.09725E-01
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,5,5.00E-03,3.18137E-01
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,7,5.00E-03,6.08746E-01
-Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,9,5.00E-03,9.91549E-01
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,1,1.00E-02,2.38987E-02
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,3,1.00E-02,6.91552E-02
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,5,1.00E-02,2.63671E-01
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,7,1.00E-02,6.19176E-01
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,9,1.00E-02,7.59402E-01
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,1,1.00E-02,2.53238E-02
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,3,1.00E-02,7.05425E-02
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,5,1.00E-02,2.67803E-01
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,7,1.00E-02,5.57200E-01
-Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,9,1.00E-02,8.58958E-01
-Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,5.00E-03,2.02746E-01
-Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,5.00E-03,3.10809E-01
-Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,7,5.00E-03,6.15149E-01
-Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,10,5.00E-03,1.01575E+00
-Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,15,5.00E-03,2.93340E+00
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1,1,2.43833E-01
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,3,1,2.59876E-01
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,5,1,2.90004E-01
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,10,1,9.34218E-01
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,15,1,2.81385E+00
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1,1,5.77290E-01
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,3,1,6.60322E-01
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,5,1,7.89025E-01
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,7.5,1,1.06030E+00
-Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,10,1,1.37474E+00
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.075,1,7.74614E-05
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.125,1,1.38053E-04
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.15,1,1.89589E-04
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.25,1,5.08993E-04
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.5,1,2.33374E-03
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.3,1,5.92867E-01
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.5,1,6.22193E-01
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1,1,5.62895E-01
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1.25,1,6.02186E-01
-Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1.5,1,5.50747E-01
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.3,1,5.78999E-04
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.4,1,1.07127E-03
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.5,1,1.79444E-03
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.75,1,4.66907E-03
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1,1,9.91837E-03
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.15,1,5.82509E-01
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.3,1,5.50083E-01
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.6,1,5.04376E-01
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.8,1,5.53382E-01
-Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1,1,5.69514E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,2,1,2.25003E-02
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,3,1,6.19188E-02
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,5,1,2.37878E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,6,1,3.82149E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,8,1,8.69955E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1,1,5.64689E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,3,1,5.85856E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,5,1,7.52404E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,6,1,8.76592E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,8,1,1.35365E+00
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,1,1,5.62509E-03
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,2,1,3.19748E-02
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,3,1,9.55372E-02
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,4,1,2.17489E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,5,1,3.90626E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,0.75,1,1.19960E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,1,1,1.29692E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,1.5,1,1.46464E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,2,1,1.58971E-01
-Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,2.5,1,1.88101E-01
-Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,2,1,1.55476E-01
-Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,3,1,1.71643E-01
-Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,5,1,2.37043E-01
-Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,7.5,1,5.54708E-01
-Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,10,1,1.16893E+00
-Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,2,1,5.44737E-01
-Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,4,1,5.11974E-01
-Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,5,1,5.80760E-01
-Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,6,1,6.45088E-01
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,7.5,1,9.66261E-01
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,2,1,9.11124E-02
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,3,1,1.11948E-01
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,5,1,1.83864E-01
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,7.5,1,4.50950E-01
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,10,1,9.37880E-01
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,3,1,2.20431E+00
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,5,1,1.86831E+00
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,6,1,2.05923E+00
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,8,1,2.28866E+00
-Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,10,1,2.67287E+00
-Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1,1,5.80759E-03
-Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1.25,1,9.07071E-03
-Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1.5,1,1.36893E-02
-Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1.75,1,1.97857E-02
-Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,2,1,2.73040E-02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.98,1,2.05900E+02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.99,1,2.01773E+02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2,1,1.98084E+02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2.1,1,2.02295E+02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2.15,1,2.01511E+02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,5,1,2.01842E+02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,7.5,1,2.01928E+02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,10.25,1,1.83860E+02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,11,1,2.02508E+02
-Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,75,1,1.78310E+02
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.25,1,4.64042E-01
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.5,1,5.16701E-01
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.75,1,4.57331E-01
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,4.87894E-01
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.5,1,5.14306E-01
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.25,1,5.05023E-01
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.5,1,4.54988E-01
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.75,1,4.81407E-01
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1,1,6.56831E-01
-Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1.5,1,4.82922E-01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,1.45759E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,3,1,1.45198E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,5,1,1.40479E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,7.5,1,1.40305E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,10,1,1.39597E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1,1,2.87744E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,3,1,2.79875E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,5,1,2.77438E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,10,1,2.67939E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,20,1,2.59231E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,1,1,4.30236E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,2.5,1,4.32043E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,6,1,4.33141E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,7.5,1,4.34154E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,15,1,4.47321E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,1.45759E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2.5,1,1.43448E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,5,1,1.40479E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,10,1,1.39597E+01
-Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,25,1,1.46781E+01
-Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.5,1,4.72845E-01
-Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,5.28183E-01
-Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2,1,5.91754E-01
-Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,4,1,6.50010E-01
-Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,5,1,7.68585E-01
-Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.3,1,4.85886E-01
-Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.4,1,4.87255E-01
-Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.5,1,5.68023E-01
-Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.75,1,4.55145E-01
-Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1,1,4.96420E-01
-Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.4,1,5.14371E-01
-Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.5,1,5.40239E-01
-Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,6.47445E-01
-Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2,1,5.38332E-01
-Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,3,1,6.66519E-01
-Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,2,1,5.10192E-01
-Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,4,1,6.71378E-01
-Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,6,1,8.14300E-01
-Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,8,1,1.19703E+00
-Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,10,1,1.78981E+00
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.5,1,4.73468E-01
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,5.63258E-01
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.25,1,4.96806E-01
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.5,1,5.18454E-01
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2,1,6.16744E-01
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.2,1,5.84282E-01
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.3,1,4.56707E-01
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.5,1,6.14310E-01
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.7,1,4.74043E-01
-Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1,1,4.73441E-01
-Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.3,1,1.26430E+02
-Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,3,1,1.18198E+02
-Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,5,1,1.14044E+02
-Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,7,1,1.11762E+02
-Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,30,1,1.04118E+02
+Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,3.78E-02,7.93848E-02
+Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,3.78E-02,1.39530E-01
+Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,3.78E-02,2.15728E-01
+Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.7,3.78E-02,4.28616E-01
+Costante,3.78E-02,Costante,2.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,3.78E-02,8.69749E-01
+Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.25,1.89E-03,9.26891E+01
+Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,1.89E-03,9.29355E+01
+Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.89E-03,9.22507E+01
+Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,10,1.89E-03,1.17123E+02
+Costante,1.89E-03,Costante,1.00E-01,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,50,1.89E-03,3.31936E+01
+Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.1,5.00E-01,9.66255E-03
+Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.2,5.00E-01,3.67339E-02
+Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,5.00E-01,7.89414E-02
+Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,5.00E-01,1.35539E-01
+Costante,5.00E-01,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,5.00E-01,2.22766E-01
+Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,6.00E-03,1.89612E+01
+Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,2,6.00E-03,1.96162E+01
+Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,4,6.00E-03,2.34858E+01
+Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,6,6.00E-03,3.30117E+01
+Costante,6.00E-03,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,2.000000,Costante,0,Costante,0,Costante,0,Costante,0,8,6.00E-03,5.49945E+01
+Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.1,7.39E-02,8.93034E-03
+Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.2,7.39E-02,3.44249E-02
+Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,7.39E-02,7.86255E-02
+Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,7.39E-02,2.18765E-01
+Costante,7.39E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.500000,Costante,0,Costante,0,Costante,0,Costante,0,1,7.39E-02,8.59573E-01
+Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.34E-02,9.36341E-01
+Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,2,1.34E-02,3.49486E+00
+Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.34E-02,7.76808E+00
+Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,4,1.34E-02,1.36825E+01
+Costante,1.34E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.34E-02,2.10991E+01
+Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,7.39E-02,7.66352E-02
+Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,7.39E-02,1.40815E-01
+Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,7.39E-02,2.19852E-01
+Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,7.39E-02,4.97704E-01
+Costante,7.39E-02,Costante,2.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,7.39E-02,1.98124E+00
+Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,3.78E-02,7.98503E-02
+Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,3.78E-02,2.13342E-01
+Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,3.78E-02,4.84571E-01
+Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,3.78E-02,8.78181E-01
+Costante,3.78E-02,Costante,-1.00E-01,Costante,-1.00E-01,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,3.78E-02,1.95063E+00
+Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.25,1.89E-03,9.45950E+01
+Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,1.89E-03,9.43282E+01
+Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.89E-03,9.44512E+01
+Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.89E-03,9.38446E+01
+Costante,1.89E-03,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-01,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,15,1.89E-03,1.80391E+02
+Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,4.26E-03,1.20808E+01
+Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,2,4.26E-03,1.27628E+01
+Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,3,4.26E-03,1.38758E+01
+Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,4,4.26E-03,1.63389E+01
+Costante,4.26E-03,Costante,-2.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,4.26E-03,2.18008E+01
+Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,2.21E-01,7.77073E-02
+Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,2.21E-01,1.39958E-01
+Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,2.21E-01,2.14113E-01
+Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.6,2.21E-01,3.19822E-01
+Costante,2.21E-01,Costante,0.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,2.21E-01,5.02311E-01
+Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.35,8.90E-02,1.07018E-01
+Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.4,8.90E-02,1.38825E-01
+Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,8.90E-02,2.21423E-01
+Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,0.7,8.90E-02,4.38508E-01
+Costante,8.90E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,1.500000,Costante,0,Costante,0,Costante,0,Costante,0,1,8.90E-02,8.47105E-01
+Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.35,8.69E-04,6.19365E+02
+Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,8.69E-04,6.10101E+02
+Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,8.69E-04,5.99599E+02
+Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,3,8.69E-04,5.84826E+02
+Costante,8.69E-04,Costante,1.00E+00,Costante,0.00E+00,Costante,0.00E+00,Funzione 8,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,8.69E-04,5.74347E+02
+Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.12E-02,1.17334E+00
+Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,2,1.12E-02,3.43941E+00
+Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.12E-02,7.85121E+00
+Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,4,1.12E-02,1.36536E+01
+Costante,1.12E-02,Costante,0.00E+00,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.12E-02,2.16403E+01
+Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,5.00E-02,7.86345E-02
+Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,5.00E-02,2.16751E-01
+Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,5.00E-02,4.85678E-01
+Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,5.00E-02,8.68698E-01
+Costante,5.00E-02,Costante,1.00E+00,Costante,0.00E+00,Costante,5.00E-02,Funzione 14,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,5.00E-02,1.97013E+00
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,4.91E-02,7.76808E-02
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,4.91E-02,2.18132E-01
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,4.91E-02,5.17096E-01
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1,4.91E-02,8.66897E-01
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 8,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,4.91E-02,2.02856E+00
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.3,4.91E-02,7.72046E-02
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,4.91E-02,2.16686E-01
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,4.91E-02,4.99810E-01
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1,4.91E-02,8.74918E-01
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 13,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,4.91E-02,1.98017E+00
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,4.91E-02,2.19294E-01
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,0.75,4.91E-02,4.89074E-01
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1,4.91E-02,8.73090E-01
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1.25,4.91E-02,1.36579E+00
+Costante,4.91E-02,Costante,2.00E-01,Costante,1.00E+00,Costante,0.00E+00,Funzione 14,0.800000,Costante,0,Costante,0,Costante,0,Costante,0,1.5,4.91E-02,1.98925E+00
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,0.5,1.00E-03,8.05319E+02
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-03,8.09676E+02
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-03,8.04637E+02
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,10,1.00E-03,8.03560E+02
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,20,1.00E-03,7.82166E+02
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,3.52884E+00
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,9.07285E+00
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.22022E+01
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,4.22303E+01
+Costante,5.00E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,6.92993E+01
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,1,1.00E-02,3.46935E+00
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,3,1.00E-02,8.79711E+00
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,5,1.00E-02,2.17443E+01
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,7,1.00E-02,4.19883E+01
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 11,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,9,1.00E-02,6.74619E+01
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,1,1.00E-02,3.52261E+00
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,3,1.00E-02,9.06783E+00
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,5,1.00E-02,2.19071E+01
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,7,1.00E-02,4.17247E+01
+Costante,5.00E-02,Costante,5.00E+00,Costante,5.00E+00,Costante,5.00E-02,Funzione 15,1.300000,Costante,0.5,Costante,0.5,Costante,0.5,Costante,0.5,9,1.00E-02,6.80837E+01
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,1.70142E+00
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,7.92367E+00
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.09438E+01
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,4.20684E+01
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 11,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,6.77497E+01
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,1.69212E+00
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,7.88091E+00
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.11564E+01
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,4.02424E+01
+Costante,3.47E-03,Costante,-1.00E+00,Costante,-1.00E+00,Costante,3.47E-03,Funzione 15,0.780000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,6.58242E+01
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-03,3.91441E+02
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-03,3.84194E+02
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-03,3.80047E+02
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-03,3.81494E+02
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 11,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-03,3.72088E+02
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,2.03816E+00
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,8.10556E+00
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.13049E+01
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,4.00359E+01
+Costante,2.00E-01,Costante,5.00E-01,Costante,5.00E-01,Costante,2.00E-01,Funzione 15,0.900000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,6.69691E+01
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,1,1.00E-02,2.36028E+00
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,3,1.00E-02,8.21164E+00
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,5,1.00E-02,2.13684E+01
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,7,1.00E-02,4.18779E+01
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 11,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,9,1.00E-02,7.17744E+01
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,1,1.00E-02,2.36128E+00
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,3,1.00E-02,8.21260E+00
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,5,1.00E-02,2.14509E+01
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,7,1.00E-02,4.32202E+01
+Costante,3.00E-04,Costante,2.50E+00,Costante,2.50E+00,Costante,3.00E-04,Funzione 15,1.000000,Costante,1,Costante,1,Costante,1,Costante,1,9,1.00E-02,7.42270E+01
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,1,1.00E-02,2.63492E+00
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,3,1.00E-02,8.28691E+00
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,5,1.00E-02,2.11869E+01
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,7,1.00E-02,4.10449E+01
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 11,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,9,1.00E-02,6.60607E+01
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,1,5.00E-03,1.39761E+01
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,3,5.00E-03,1.76125E+01
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,5,5.00E-03,2.72415E+01
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,7,5.00E-03,4.31515E+01
+Costante,7.50E-01,Costante,1.00E+00,Costante,1.00E+00,Costante,7.50E-01,Funzione 15,1.100000,Costante,0,Costante,0,Costante,0,Costante,0,9,5.00E-03,6.78953E+01
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,1,1.00E-02,2.64063E+00
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,3,1.00E-02,8.29735E+00
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,5,1.00E-02,2.17004E+01
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,7,1.00E-02,4.07873E+01
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 11,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,9,1.00E-02,6.48843E+01
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,1,1.00E-02,2.72866E+00
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,3,1.00E-02,8.38696E+00
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,5,1.00E-02,2.16084E+01
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,7,1.00E-02,4.12039E+01
+Costante,6.43E-02,Costante,1.00E+00,Costante,1.00E+00,Costante,6.43E-02,Funzione 15,1.100000,Costante,0.25,Costante,0.25,Costante,0.25,Costante,0.25,9,1.00E-02,6.77434E+01
+Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,1,5.00E-03,1.16990E+01
+Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,5,5.00E-03,2.47177E+01
+Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,7,5.00E-03,4.16787E+01
+Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,10,5.00E-03,7.92898E+01
+Costante,6.43E-02,Costante,1.00E+01,Costante,1.00E+01,Costante,6.43E-02,Funzione 11,1.000000,Costante,0,Costante,0,Costante,0,Costante,0,15,5.00E-03,1.79801E+02
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1,1,2.36024E+01
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,3,1,2.59952E+01
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,5,1,3.11879E+01
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,10,1,8.58989E+01
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,15,1,1.90183E+02
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1,1,2.02276E+01
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,3,1,2.35060E+01
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,5,1,3.28835E+01
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,7.5,1,5.71784E+01
+Costante,2.50E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,10,1,9.17788E+01
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.075,1,5.58880E-03
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.125,1,1.41953E-02
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.15,1,1.96759E-02
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.25,1,5.49150E-02
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.5,1,2.17066E-01
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.3,1,7.87923E+00
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.5,1,8.25906E+00
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1,1,8.54338E+00
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1.25,1,8.93002E+00
+Costante,4.32E-01,Costante,5.00E-01,Costante,-8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1.5,1,9.23030E+00
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.3,1,7.76880E-02
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.4,1,1.34769E-01
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.5,1,2.13432E-01
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,0.75,1,4.81952E-01
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1,1,8.50822E-01
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.15,1,8.21415E+00
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.3,1,7.98183E+00
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.6,1,7.68363E+00
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,0.8,1,8.27389E+00
+Costante,8.31E-02,Costante,5.00E-02,Costante,-8.66E-02,Costante,5.00E-01,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1,1,8.72352E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,2,1,3.51718E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,3,1,7.72988E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,5,1,2.15737E+01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,6,1,3.04606E+01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,8,1,5.42766E+01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,1,1,8.81207E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,3,1,1.49800E+01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,5,1,2.84875E+01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,6,1,3.72532E+01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0,Costante,0,Funzione 9,1,8,1,5.94282E+01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,1,1,8.79295E-01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,2,1,3.42079E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,3,1,7.61515E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,4,1,1.35692E+01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 9,0.5,Funzione 10,0.5,Costante,0,Costante,0,5,1,1.99821E+01
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,0.75,1,2.20728E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,1,1,2.63936E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,1.5,1,3.74500E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,2,1,5.13432E+00
+Costante,3.00E-02,Costante,-1.50E+00,Costante,2.60E+00,Costante,0.00E+00,Costante,0.000000,Funzione 10,0.5,Costante,0,Costante,0,Funzione 9,0.5,2.5,1,7.12186E+00
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,2,1,1.36134E+01
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,3,1,1.53926E+01
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,5,1,2.36604E+01
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,7.5,1,4.86029E+01
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0.25,Costante,0.25,10,1,8.51196E+01
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,2,1,1.57144E+01
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,4,1,2.15436E+01
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,5,1,2.82733E+01
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,6,1,3.70851E+01
+Costante,2.61E-03,Costante,-5.00E-01,Costante,8.66E-01,Costante,0.00E+00,Costante,0.000000,Funzione 10,1,Costante,0.25,Costante,0.25,Funzione 9,1,7.5,1,5.51990E+01
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,2,1,9.57276E+00
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,3,1,1.17655E+01
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,5,1,2.30793E+01
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,7.5,1,4.98123E+01
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 9,2,Funzione 10,2,Costante,0.25,Costante,0.25,10,1,8.76473E+01
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,3,1,3.77252E+01
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,5,1,4.70097E+01
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,6,1,5.72460E+01
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,8,1,8.13329E+01
+Costante,1.98E-02,Costante,-2.00E+00,Costante,3.46E+00,Costante,5.00E-01,Costante,0.000000,Funzione 10,2,Costante,0.25,Costante,0.25,Funzione 9,2,10,1,1.10786E+02
+Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1,1,9.43111E-01
+Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1.25,1,1.39815E+00
+Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1.5,1,1.97610E+00
+Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,1.75,1,2.66102E+00
+Costante,9.74E-03,Costante,7.50E-01,Costante,6.50E-01,Costante,0.00E+00,Costante,0.000000,Funzione 9,1,Funzione 10,1,Costante,0,Costante,0,2,1,3.44681E+00
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.98,1,5.26862E+03
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.99,1,5.17421E+03
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2,1,5.10690E+03
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2.1,1,5.17598E+03
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2.15,1,5.16891E+03
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,5,1,5.29265E+03
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,7.5,1,5.29082E+03
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,10.25,1,4.85965E+03
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,11,1,5.21008E+03
+Costante,5.00E-04,Costante,3.00E+00,Costante,1.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,75,1,5.60951E+03
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.25,1,6.88543E+00
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.5,1,7.79319E+00
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.75,1,7.17239E+00
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,7.71337E+00
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.5,1,8.81162E+00
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.25,1,7.31697E+00
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.5,1,7.02120E+00
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.75,1,7.41188E+00
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1,1,9.44241E+00
+Costante,2.67E-01,Costante,2.50E-01,Costante,-2.50E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1.5,1,8.52954E+00
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,4.64732E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,3,1,4.60665E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,5,1,4.54754E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,7.5,1,4.60875E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,10,1,4.73414E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1,1,9.20827E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,3,1,9.06377E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,5,1,8.91120E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,10,1,8.87900E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,20,1,9.52189E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,1,1,1.45315E+03
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,2.5,1,1.45566E+03
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,6,1,1.45368E+03
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,7.5,1,1.44370E+03
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,1,Costante,1,Costante,0,15,1,1.50827E+03
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,4.64732E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2.5,1,4.60407E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,5,1,4.54754E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,10,1,4.73414E+02
+Costante,1.78E-03,Costante,3.00E+00,Costante,1.00E+00,Costante,1.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,25,1,6.13210E+02
+Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.5,1,7.24614E+00
+Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,8.30616E+00
+Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2,1,1.07119E+01
+Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,4,1,1.99946E+01
+Costante,8.61E-02,Costante,-1.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,5,1,2.70844E+01
+Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.3,1,7.10773E+00
+Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.4,1,7.22867E+00
+Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.5,1,7.77646E+00
+Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.75,1,7.16390E+00
+Costante,8.61E-02,Costante,-5.00E-01,Costante,-2.50E-01,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1,1,7.87378E+00
+Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.4,1,1.03322E+01
+Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.5,1,1.06160E+01
+Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,1.18724E+01
+Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2,1,1.20627E+01
+Costante,4.31E-03,Costante,1.00E+00,Costante,5.00E-01,Costante,0.00E+00,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,3,1,1.60668E+01
+Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,2,1,1.07185E+01
+Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,4,1,2.08577E+01
+Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,6,1,3.75330E+01
+Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,8,1,6.15407E+01
+Costante,4.31E-03,Costante,4.00E-01,Costante,-2.00E-01,Costante,2.50E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,10,1,9.01598E+01
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,0.5,1,7.13645E+00
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1,1,8.30396E+00
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.25,1,8.23021E+00
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,1.5,1,8.68566E+00
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,0,Costante,0,Costante,1,Costante,1,2,1,1.04963E+01
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.2,1,7.71046E+00
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.3,1,6.87960E+00
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.5,1,8.30370E+00
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.7,1,7.28865E+00
+Costante,8.16E-01,Costante,2.00E+00,Costante,1.00E+00,Costante,8.16E-01,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,1,1,7.59804E+00
+Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,0.3,1,2.70652E+03
+Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,3,1,2.59248E+03
+Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,5,1,2.56803E+03
+Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,7,1,2.56218E+03
+Costante,1.23E-03,Costante,4.00E+00,Costante,2.00E+00,Costante,0.00E+00,Costante,0.000000,Costante,1,Costante,1,Costante,0,Costante,0,30,1,2.81730E+03
